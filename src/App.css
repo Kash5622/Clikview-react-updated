@@ -969,9 +969,11 @@ svg.feather {
   font-size: 14px;
   color: white;
 }
-#search-bar::placeholder{
+
+#search-bar::placeholder {
   color: #919191;
 }
+
 .dropdown-menu {
   animation-name: slidenavAnimation;
   animation-duration: .1s;
@@ -1662,12 +1664,25 @@ header .dropdown-menu.ani_log_menu li a {
   transition: all 0.3s;
 }
 
+.pt_sec_nav_cats {
+  margin: -20px -15px 0;
+  padding: 15px 15px;
+  position: relative;
+  z-index: 9;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
 /* Night Mode CSS */
-.navbar-fixed-top{
+.navbar-fixed-top {
   background: #050404 !important;
   border-bottom: none !important;
 }
 
+.pt_sec_nav_cats {
+  background: rgb(0 0 0 / 72%);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 6%);
+}
 
 
 
