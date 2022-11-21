@@ -127,7 +127,7 @@ function Featuredvideo() {
     ]
   };
   return (
-    <div className=" container-home hide_trend" Style="position: relative; background: transparent; margin-top: -8%;">
+    <div className=" container-home hide_trend" Style="position: relative; background: transparent; margin-top: -6%;">
 
       <div className="content pt_shadow yp_trans">
 

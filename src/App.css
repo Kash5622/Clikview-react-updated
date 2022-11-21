@@ -248,7 +248,7 @@ nav.navbar-findcond ul.right-part a:active {
 }
 
 .yp_side_drawer ul.sections {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #444;
   padding: 12px 0;
   display: block;
   margin: 0;
@@ -321,7 +321,6 @@ svg {
 }
 
 #middleNav {
-  width: 57%;
   display: none;
 }
 
@@ -403,7 +402,6 @@ svg {
   padding-bottom: 729px;
   z-index: 0;
   position: relative;
-  overflow: auto;
 }
 
 .bannerImgDiv {
@@ -575,9 +573,16 @@ svg {
 }
 
 .pt_feat_vid_details {
-  top: 16rem;
+  /* top: 16rem; */
   position: relative;
   color: white;
+}
+
+.pt_feat_vid_details h1{
+  font-size: 40px;
+  max-height: 145px;
+  overflow: hidden;
+  text-shadow: 2px 2px 3px rgb(0 0 0 / 15%);
 }
 
 .bold {
@@ -1391,7 +1396,7 @@ title h4 {
 }
 
 .shrinkWidth {
-  width: 85%
+  width: 87%
 }
 
 .expandWidth {
@@ -1575,7 +1580,7 @@ header .dropdown-menu.ani_log_menu li a {
 .yp_side_drawer ul.sections h3 {
   margin: 0;
   padding: 8px 24px;
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: .007px;
   text-transform: uppercase;
@@ -1625,7 +1630,12 @@ header .dropdown-menu.ani_log_menu li a {
   box-shadow: 0 1px 0 rgb(255 255 255 / 6%)
 } */
 
-
+.sidebarTrans-enter {
+  transition: all 0.3s;
+}
+.sidebarTrans-enter-active {
+  transition: all 0.3s;
+}
 
 .swiper-button-next {
   right: 0px !important;
@@ -1657,6 +1667,16 @@ header .dropdown-menu.ani_log_menu li a {
   backdrop-filter: saturate(180%) blur(20px);
   width: 100%;
   margin: auto;
+}
+
+nav.navbar-findcond .search-header {
+  margin: 10.5px 11px 10.5px 0px;
+}
+
+@media (max-width: 1090px) {
+  nav.navbar-findcond .search-header {
+    padding: 0 !important;
+  }
 }
 
 /* Night Mode CSS */
@@ -1695,6 +1715,16 @@ header .dropdown-menu.ani_log_menu li a {
   .pt_feat_vid_content .video-title .video-big-title::-webkit-scrollbar {
     width: 4px;
   }
+
+  .yp_side_drawer::-webkit-scrollbar-thumb,
+  .pt_featured_video .video-player .video-big-title::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.4);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+    width: 10px;
+  }
 }
 
 
@@ -1704,6 +1734,36 @@ header .dropdown-menu.ani_log_menu li a {
 
 
 /* Media Query for responsive */
+@media (max-width: 620px) {
+  nav.navbar-findcond .yp_slide_menu span {
+    margin: 10px 0px;
+  }
+
+  nav.navbar-findcond .logo-img {
+    margin: 8px 15px !important;
+  }
+}
+
+@media (max-width: 460px) {
+  nav.navbar-findcond .logo-img {
+    max-width: 138px;
+    margin: 11.5px 10px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  nav.navbar-findcond .logo-img {
+    max-width: 95px;
+    margin: 13px 3px !important;
+  }
+
+  .yp_slide_menu span {
+    margin: 10px 4px;
+  }
+}
+
+
+
 @media screen and (max-width:540px) {
   .mobileHide {
     display: none;
@@ -1725,10 +1785,10 @@ header .dropdown-menu.ani_log_menu li a {
     top: 0px;
   }
 
-  nav.navbar-findcond .logo-img {
+  /* nav.navbar-findcond .logo-img {
     max-width: 95px;
     margin: 13px 3px !important;
-  }
+  } */
 
   .pt_header_nav .right-part>li {
     margin: 0 2px;
@@ -1775,7 +1835,6 @@ header .dropdown-menu.ani_log_menu li a {
 
 @media (min-width:760px) and (max-width:865px) {
   #middleNav {
-    width: 35vw;
     display: block;
   }
 
@@ -1825,9 +1884,10 @@ header .dropdown-menu.ani_log_menu li a {
     display: block;
   }
 
+  /* 
   .left-part {
     width: 200px;
-  }
+  } */
 
   .mobileHide {
     display: block;
@@ -1896,16 +1956,22 @@ header .dropdown-menu.ani_log_menu li a {
   }
 }
 
+@media (max-width: 1210px) {
+  nav.navbar-findcond .search-header {
+    margin: 10.5px 11px 10.5px 20px;
+  }
+}
+
 @media (min-width:1250px) {
   .yp_side_drawer {
     width: 4%;
     position: fixed;
     overflow: auto;
     top: 50px;
-    height: 100vh;
     box-shadow: 1px 0px 5px rgb(0 0 0 / 15%);
     overflow-y: auto;
     transition: all 0.3s;
+    bottom: 0;
   }
 
   .sideNavBar {
@@ -1925,7 +1991,8 @@ header .dropdown-menu.ani_log_menu li a {
   }
 
   .mobileHide {
-    display: block;
+    display: flex;
+    align-items: flex-end;
   }
 
   .hide_hdr_usr_name {
@@ -1945,7 +2012,7 @@ header .dropdown-menu.ani_log_menu li a {
   }
 
   .expandNav .yp_side_drawer {
-    width: 15%;
+    width: 13%;
   }
 
   nav.navbar-findcond ul.dropdown-menu.myAccount {
@@ -1980,5 +2047,15 @@ header .dropdown-menu.ani_log_menu li a {
 
   .hidenav {
     z-index: -1;
+  }
+}
+
+@media (min-width:1270px) and (max-width:1370px){
+  .yp_side_drawer {
+    width: 6%;
+  }
+
+  .expandWidth {
+    width: 94%;
   }
 }
