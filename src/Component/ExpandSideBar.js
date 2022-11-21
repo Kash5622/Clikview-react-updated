@@ -6,9 +6,10 @@ function ExpandSideBar(props) {
     return (
         <CSSTransition
             timeout={300}
-            in={true}
-            classNames="sidebarTrans">
-            <div className='expandNav sideBarTrans'>
+            in={props.expandNav}
+            classNames="sidebarTransition"
+            unmountOnExit>
+            <div className='expandNav '>
                 <div className="yp_side_drawer">
                     <span className="open_side_menu_head hide-from-mobile">
                         <span >

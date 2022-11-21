@@ -25,7 +25,7 @@ function App() {
           <Route exact path='/home2' element={<Home searchOpen={searchOpen} expandNav={expandNav}/>} />
           <Route exact path='/home2/allvideos/:Category' element={ <AllVideos searchOpen={searchOpen} expandNav={expandNav}/>}/>
         </Routes>
-        {expandNav ? <ExpandSideBar expandNavClick={expandNavClick}/> : <SideNavBar />}
+        {expandNav ? <ExpandSideBar expandNav={expandNav} expandNavClick={expandNavClick}/> : <SideNavBar />}
       </Router>
     </div>
   );

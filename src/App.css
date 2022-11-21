@@ -1629,13 +1629,30 @@ header .dropdown-menu.ani_log_menu li a {
   background: rgb(0 0 0 / 72%);
   box-shadow: 0 1px 0 rgb(255 255 255 / 6%)
 } */
+.sidebarTransition-enter {
+  opacity: 0;
+  /* transform: scale(0.9); */
+}
+.sidebarTransition-enter-active {
+  opacity: 1;
+  /* transform: translateX(0); */
+  transition: opacity 3000ms, transform 3000ms;
+}
+.sidebarTransition-exit {
+  opacity: 1;
+}
+.sidebarTransition-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 3000ms, transform 3000ms;
+}
 
-.sidebarTrans-enter {
-  transition: all 0.3s;
+/* .sidebarTransition-enter-active  {
+  transition: opacity 3000ms, transform 3000ms;
 }
-.sidebarTrans-enter-active {
-  transition: all 0.3s;
-}
+.sidebarTransition-exit-active {
+  transition: opacity 3000ms, transform 3000ms;
+} */
 
 .swiper-button-next {
   right: 0px !important;
@@ -1654,9 +1671,9 @@ header .dropdown-menu.ani_log_menu li a {
   background-position: center;
 }
 
-.sideBarTrans {
+/* .sideBarTrans {
   transition: all 0.3s;
-}
+} */
 
 .pt_sec_nav_cats {
   margin: 0px -15px 0;
@@ -1677,6 +1694,22 @@ nav.navbar-findcond .search-header {
   nav.navbar-findcond .search-header {
     padding: 0 !important;
   }
+}
+.yp_side_drawer ul.sections li a:before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 34px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #04abf2;
+  opacity: 0;
+  visibility: hidden;
+}
+.yp_side_drawer ul.sections li.active a:before {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Night Mode CSS */
@@ -1703,7 +1736,9 @@ nav.navbar-findcond .search-header {
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.12);
 }
-
+.yp_side_drawer ul.sections li.active a {
+  color: #0094d8 !important;
+}
 @media (min-width: 992px) {
 
   .yp_side_drawer::-webkit-scrollbar,
