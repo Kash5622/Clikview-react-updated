@@ -31,7 +31,7 @@ body {
   line-height: 28px;
   width: 28px;
   position: absolute;
-  top: 0;
+  top: 0% !important;
   box-shadow: 0 0 10px 10px rgb(0 0 0 / 9%);
   margin: 0;
   color: #444 !important;
@@ -391,12 +391,11 @@ svg {
 }
 
 .main-container {
-  margin-top: 3.5rem;
   position: absolute;
   overflow: hidden;
   background-color: #181818;
   transition: all 0.3s;
-  margin-top: 3.2rem;
+  top: 55px;
 }
 
 .mainBanner {
@@ -404,6 +403,7 @@ svg {
   padding-bottom: 729px;
   z-index: 0;
   position: relative;
+  overflow: auto;
 }
 
 .bannerImgDiv {
@@ -618,7 +618,7 @@ svg {
 .swiper {
   width: 90%;
   margin-left: 3rem;
-  padding-left: 2rem;
+  padding-left: 0rem !important;
 }
 
 .yp_trans {
@@ -1600,19 +1600,7 @@ header .dropdown-menu.ani_log_menu li a {
 ::-webkit-scrollbar {
   width: 4px;
 } */
-::-webkit-scrollbar {
-  background: #212121;
-  width: 4px;
-}
 
--webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136, 0.4);
-}
-
--webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.12);
-}
 
 .pt_feat_vid_innr,
 .pt_feat_vid_content {
@@ -1631,17 +1619,13 @@ header .dropdown-menu.ani_log_menu li a {
   width: 95%;
 }
 
+/* 
 .categoryContainer {
   background: rgb(0 0 0 / 72%);
   box-shadow: 0 1px 0 rgb(255 255 255 / 6%)
-}
+} */
 
-.swiper {
-  background: rgb(0 0 0 / 72%);
-  box-shadow: 0 1px 0 rgb(255 255 255 / 6%);
-  padding: 15px 15px;
-  backdrop-filter: saturate(180%) blur(20px);
-}
+
 
 .swiper-button-next {
   right: 0px !important;
@@ -1665,12 +1649,14 @@ header .dropdown-menu.ani_log_menu li a {
 }
 
 .pt_sec_nav_cats {
-  margin: -20px -15px 0;
+  margin: 0px -15px 0;
   padding: 15px 15px;
   position: relative;
   z-index: 9;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
+  width: 100%;
+  margin: auto;
 }
 
 /* Night Mode CSS */
@@ -1682,6 +1668,33 @@ header .dropdown-menu.ani_log_menu li a {
 .pt_sec_nav_cats {
   background: rgb(0 0 0 / 72%);
   box-shadow: 0 1px 0 rgb(255 255 255 / 6%);
+}
+
+::-webkit-scrollbar {
+  background: #fcfcfc;
+  width: 10px;
+}
+
+-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.4);
+}
+
+-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 992px) {
+
+  .yp_side_drawer::-webkit-scrollbar,
+  .pt_featured_video .video-player .video-big-title::-webkit-scrollbar {
+    background: #212121;
+  }
+
+  .yp_side_drawer::-webkit-scrollbar,
+  .pt_feat_vid_content .video-title .video-big-title::-webkit-scrollbar {
+    width: 4px;
+  }
 }
 
 

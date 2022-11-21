@@ -6,8 +6,8 @@ function HomeBanner() {
         profilephoto: "https://clikview.com/upload/photos/2022/08/jAsf9cPGcB2VrdnkWMNG_17_51bb3f829fcfe61daca518480bb0a51b_image.png",
         profilelink: "/",
         followers: "273",
-        heading: "Ways To Keep Yourself Safe",
-        desc: "Ways To Keep Yourself Safe",
+        heading: "THEY ARE COMING, Don't Be Afraid. Just Get Prepared! - Dr Rashid A Buttar",
+        desc: 'Viewed 1,239,112 times in the first 24 hours after being posted before being deleted by YouTube for "violating"',
         category: "Advanced Medicine",
         date: "24/08/22",
         time: "2:20",
@@ -71,9 +71,9 @@ function HomeBanner() {
 
                                     <div className="video-big-title" Style="height:12rem;">
 
-                                        <a href="https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html" data-load="?link1=watch&amp;id=ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html">Ways To Keep Yourself Safe</a>
+                                        <a href="https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html" data-load="?link1=watch&amp;id=ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html">{data.heading}</a>
 
-                                        <p> Ways To Keep Yourself Safe</p>
+                                        <p>{data.desc}</p>
 
                                     </div>
 
