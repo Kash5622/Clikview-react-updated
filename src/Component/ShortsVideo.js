@@ -7,7 +7,7 @@ function ShortsVideo() {
     const data = [
         {
             videoId: "1",
-            videoImg: "https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg",
+            videoImg: "https://clikview.com/upload/photos/2022/11/754d88f34cf6f1dedf47c3d0324311ca2045985c7nWpuXQvJnkG96VLccDF.video_thumb_7300_11.jpeg",
             title: "How to Relax an Overactive Mind",
             duration: "0:59",
             owner: "Jill Gordon",
@@ -16,7 +16,7 @@ function ShortsVideo() {
         },
         {
             videoId: "2",
-            videoImg: "https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg",
+            videoImg: "https://clikview.com/upload/photos/2022/11/754d88f34cf6f1dedf47c3d0324311ca2045985c7nWpuXQvJnkG96VLccDF.video_thumb_7300_11.jpeg",
             title: "How to Relax an Overactive Mind",
             duration: "0:59",
             owner: "Jill Gordon",
@@ -25,7 +25,7 @@ function ShortsVideo() {
         },
         {
             videoId: "3",
-            videoImg: "https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg",
+            videoImg: "https://clikview.com/upload/photos/2022/11/754d88f34cf6f1dedf47c3d0324311ca2045985c7nWpuXQvJnkG96VLccDF.video_thumb_7300_11.jpeg",
             title: "How to Relax an Overactive Mind",
             duration: "0:59",
             owner: "Jill Gordon",
@@ -34,7 +34,7 @@ function ShortsVideo() {
         },
         {
             videoId: "4",
-            videoImg: "https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg",
+            videoImg: "https://clikview.com/upload/photos/2022/11/754d88f34cf6f1dedf47c3d0324311ca2045985c7nWpuXQvJnkG96VLccDF.video_thumb_7300_11.jpeg",
             title: "How to Relax an Overactive Mind",
             duration: "0:59",
             owner: "Jill Gordon",
@@ -43,7 +43,7 @@ function ShortsVideo() {
         },
         {
             videoId: "5",
-            videoImg: "https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg",
+            videoImg: "https://clikview.com/upload/photos/2022/11/754d88f34cf6f1dedf47c3d0324311ca2045985c7nWpuXQvJnkG96VLccDF.video_thumb_7300_11.jpeg",
             title: "How to Relax an Overactive Mind",
             duration: "0:59",
             owner: "Jill Gordon",
@@ -52,7 +52,7 @@ function ShortsVideo() {
         },
         {
             videoId: "6",
-            videoImg: "https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg",
+            videoImg: "https://clikview.com/upload/photos/2022/11/754d88f34cf6f1dedf47c3d0324311ca2045985c7nWpuXQvJnkG96VLccDF.video_thumb_7300_11.jpeg",
             title: "How to Relax an Overactive Mind",
             duration: "0:59",
             owner: "Jill Gordon",
@@ -150,10 +150,10 @@ function ShortsVideo() {
                                             Style="width: 100%; display: inline-block;">
                                             <div className="video-list short">
                                                 <div className="video-list-image">
-                                                    <a href="https://clikview.com/shorts/grand-canyon-travel-photography_V2RXS52aPovo7f6.html"
+                                                    <a href={element.videoImg}
                                                         data-load="?link1=shorts&amp;id=grand-canyon-travel-photography_V2RXS52aPovo7f6.html"
                                                         tabIndex="0">
-                                                        <img src="https://clikview.com/upload/photos/2022/10/8rqPzxXTFhCUVmsuY42i_28_43e65625ec56fe35142c9f623d172219_image.jpeg"
+                                                        <img src={element.videoImg}
                                                             alt="Grand Canyon Travel Photography" />
                                                         <div className="play_hover_btn" onmouseenter="show_gif(this,'')"
                                                             onmouseleave="hide_gif(this)">

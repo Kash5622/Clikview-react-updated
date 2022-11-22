@@ -138,7 +138,7 @@ function ExpandSideBar(props) {
                     </ul>
                     <ul className="sections more_links_list">
                         <h3>Explore more</h3>
-                        <li id='reportingBug' onClick={() => { setAddActive("reportingBug") }}>
+                        <li id='reportingBug' className="hide-from-mobile " onClick={() => { setAddActive("reportingBug") }}>
                             <Link to="/home2/" data-load="?link1=contact">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" >
 

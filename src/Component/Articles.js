@@ -82,7 +82,7 @@ function Articles() {
                                                     </a>&nbsp;&nbsp;
                                                     <div>
                                                         <h6><a href="https://clikview.com/@Xileen" >{element.userName}</a></h6>
-                                                        <div className="article-views">{element.publish}</div>
+                                                        <span className="article-views">{element.publish}</span>
                                                     </div>
                                                 </div>
                                                 <div className="u-floatLeft">

@@ -2,8 +2,7 @@ import React from 'react'
 
 function MobileSearch() {
     return (
-        <div>
-            <nav className="navbar navbar-findcond navbar-fixed-top search-bar hidden">
+            <nav className="navbar navbar-findcond pt_sec_nav_cats navbar-fixed-top search-bar hidden">
                 <div className="container-fluid">
                     <form className="search-header-mobile" role="search" action="https://clikview.com/search" method="GET" Style="width:100%">
                         <div className="form-group">
@@ -14,7 +13,6 @@ function MobileSearch() {
                     </form>
                 </div>
             </nav>
-        </div>
     )
 }
 
