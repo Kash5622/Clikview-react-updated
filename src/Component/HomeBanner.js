@@ -2,10 +2,11 @@ import React from 'react'
 
 function HomeBanner() {
     const data = {
-        name: "Dr David E. Martin",
-        profilephoto: "https://clikview.com/upload/photos/2022/08/jAsf9cPGcB2VrdnkWMNG_17_51bb3f829fcfe61daca518480bb0a51b_image.png",
-        profilelink: "/",
-        followers: "273",
+        name: "Dr Rashid A Buttar ",
+        profilePhoto: "https://clikview.com/upload/photos/2022/08/FXJuXiblBEku8MWYkrwW_19_9b159e59a4ec0615c58464d25326bc13_image.jpeg",
+        bannerPhoto: "https://clikview.com/upload/photos/2022/08/jAsf9cPGcB2VrdnkWMNG_17_51bb3f829fcfe61daca518480bb0a51b_image.png",
+        profilelink: "/home2",
+        followers: "1274",
         heading: "THEY ARE COMING, Don't Be Afraid. Just Get Prepared! - Dr Rashid A Buttar",
         desc: 'Viewed 1,239,112 times in the first 24 hours after being posted before being deleted by YouTube for "violating"',
         category: "Advanced Medicine",
@@ -23,7 +24,7 @@ function HomeBanner() {
         <>
             <div className='mainBanner'>
                 <div className='bannerImgDiv'>
-                    <img src={data.profilephoto} alt={data.name} className='bannerImg' />
+                    <img src={data.bannerPhoto} alt={data.name} className='bannerImg' />
                 </div>
                 <div className='pt_feat_vid_content'>
                     <div className='container-home' >
@@ -51,15 +52,17 @@ function HomeBanner() {
 
                                         <div className="publisher-avatar pull-left">
 
-                                            <a href="https://clikview.com/@Drmartin" data-load="?link1=timeline&amp;id=Drmartin"><img src="https://clikview.com/upload/photos/2022/08/Jxy29ew6njU7GPAOLAbo_19_8e4340d3d78dd8a907c31b09be80a8c8_image.png" alt="Dr David E. Martin" /></a>
+                                            <a href="https://clikview.com/@Drmartin" data-load="?link1=timeline&amp;id=Drmartin"><img src={data.profilePhoto} alt={data.name} /></a>
 
                                         </div>
 
                                         <div className="publisher-name">
 
-                                            <a href="https://clikview.com/@Drmartin" data-load="?link1=timeline&amp;id=Drmartin">Dr David E. Martin</a>
+                                            <a href="https://clikview.com/@Drmartin" data-load="?link1=timeline&amp;id=Drmartin">{data.name}
+                                                <i class="fa fa-check-circle fa-fw verified"></i>
+                                            </a>
 
-                                            <div className="publisher-subscribe-button"><button className="btn-subscribe subscribe-id-11" data-id="11" onClick="PT_Subscribe(11, 'subscribe')">Subscribe</button><span className="subs-amount">276</span></div>
+                                            <div className="publisher-subscribe-button"><button className="btn-subscribe subscribe-id-11" data-id="11" onClick="PT_Subscribe(11, 'subscribe')">Subscribe</button><span className="subs-amount">{data.followers}</span></div>
 
                                         </div>
 
@@ -67,9 +70,9 @@ function HomeBanner() {
 
                                     </div>
 
-                                    <hr />
+                                    <hr className='homeBannerLine' Style='margin-top: 18px;margin-bottom: 18px;border-top: 1px solid #eee;'/>
 
-                                    <div className="video-big-title" Style="height:12rem;">
+                                    <div className="video-big-title" Style='height:16rem'>
 
                                         <a href="https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html" data-load="?link1=watch&amp;id=ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html">{data.heading}</a>
 
@@ -81,35 +84,35 @@ function HomeBanner() {
 
                                     <div className="video-big-share">
 
-                                        <span className="btn pointer" data-toggle="modal" Style="display:inherit" data-target="#share_box"><svg width="19" height="19" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.333 14.667a4.66 4.66 0 00-3.839 2.024l-6.509-2.939a4.574 4.574 0 00.005-3.488l6.5-2.954a4.66 4.66 0 10-.827-2.643 4.633 4.633 0 00.08.786l-6.91 3.14a4.668 4.668 0 10-.015 6.827l6.928 3.128a4.736 4.736 0 00-.079.785 4.667 4.667 0 104.666-4.666zm0-12.667a2.667 2.667 0 11-2.666 2.667A2.669 2.669 0 0119.333 2zM4.667 14.667A2.667 2.667 0 117.333 12a2.67 2.67 0 01-2.666 2.667zM19.333 22A2.667 2.667 0 1122 19.333 2.669 2.669 0 0119.333 22z"></path></svg>&nbsp;Share</span>
+                            <span className="btn pointer" data-toggle="modal" Style="display:inherit" data-target="#share_box"><svg width="19" height="19" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19.333 14.667a4.66 4.66 0 00-3.839 2.024l-6.509-2.939a4.574 4.574 0 00.005-3.488l6.5-2.954a4.66 4.66 0 10-.827-2.643 4.633 4.633 0 00.08.786l-6.91 3.14a4.668 4.668 0 10-.015 6.827l6.928 3.128a4.736 4.736 0 00-.079.785 4.667 4.667 0 104.666-4.666zm0-12.667a2.667 2.667 0 11-2.666 2.667A2.669 2.669 0 0119.333 2zM4.667 14.667A2.667 2.667 0 117.333 12a2.67 2.67 0 01-2.666 2.667zM19.333 22A2.667 2.667 0 1122 19.333 2.669 2.669 0 0119.333 22z"></path></svg>&nbsp;Share</span>
 
-                                        <span><a onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html', 'newwindow', 'width=700,height=550'); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html"><i className="fa fa-facebook"></i></a></span>
+                            <span className='sociallink'><a onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html', 'newwindow', 'width=700,height=550'); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html"><i className="fa fa-facebook"></i></a></span>
 
-                                        <span><a onClick="window.open('https://twitter.com/intent/tweet?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html', 'newwindow', 'width=700,height=550'); return false;" href="https://twitter.com/intent/tweet?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html"><i className="fa fa-twitter"></i></a></span>
+                            <span className='sociallink'><a onClick="window.open('https://twitter.com/intent/tweet?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html', 'newwindow', 'width=700,height=550'); return false;" href="https://twitter.com/intent/tweet?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html"><i className="fa fa-twitter"></i></a></span>
 
-                                        <span><a onClick="window.open('https://www.linkedin.com/shareArticle?mini=true&amp;url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;title=Ways To Keep Yourself Safe', 'newwindow', 'width=700,height=550'); return false;" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;title=Ways To Keep Yourself Safe"><i className="fa fa-linkedin"></i></a></span>
+                            <span className='sociallink'><a onClick="window.open('https://www.linkedin.com/shareArticle?mini=true&amp;url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;title=Ways To Keep Yourself Safe', 'newwindow', 'width=700,height=550'); return false;" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;title=Ways To Keep Yourself Safe"><i className="fa fa-linkedin"></i></a></span>
 
-                                        <span><a onClick="window.open('https://pinterest.com/pin/create/button/?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;media=https://clikview.com/upload/photos/2022/08/cmTGAb4wCde4XKKRU3Jv_24_db98bc03a816c866a90bc9c37d4c40b2_image.png', 'newwindow', 'width=700,height=550'); return false;" href="https://pinterest.com/pin/create/button/?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;media=https://clikview.com/upload/photos/2022/08/cmTGAb4wCde4XKKRU3Jv_24_db98bc03a816c866a90bc9c37d4c40b2_image.png"><i className="fa fa-pinterest"></i></a></span>
+                            <span className='sociallink'><a onClick="window.open('https://pinterest.com/pin/create/button/?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;media=https://clikview.com/upload/photos/2022/08/cmTGAb4wCde4XKKRU3Jv_24_db98bc03a816c866a90bc9c37d4c40b2_image.png', 'newwindow', 'width=700,height=550'); return false;" href="https://pinterest.com/pin/create/button/?url=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html&amp;media=https://clikview.com/upload/photos/2022/08/cmTGAb4wCde4XKKRU3Jv_24_db98bc03a816c866a90bc9c37d4c40b2_image.png"><i className="fa fa-pinterest"></i></a></span>
 
-                                        <span><a href="https://api.whatsapp.com/send?text=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html"><i className="fa fa-whatsapp"></i></a></span>
+                            <span className='sociallink'><a href="https://api.whatsapp.com/send?text=https://clikview.com/watch/ways-to-keep-yourself-safe_TXel3u8unsnv1qc.html"><i className="fa fa-whatsapp"></i></a></span>
 
-                                    </div>
-
-                                    <div className="video-big-share">
-
-                                        <span className="btn pointer" onClick="location.href = 'https://clikview.com/auction';"> Participate</span>
-
-
-
-                                    </div>
-
-                                </div>
-
-                            </div>
                         </div>
+
+                        <div className="video-big-share">
+
+                            <span className="btn pointer" onClick="location.href = 'https://clikview.com/auction';"> Participate</span>
+
+
+
+                        </div>
+
                     </div>
+
                 </div>
             </div>
+        </div>
+                </div >
+            </div >
         </>
     )
 }
