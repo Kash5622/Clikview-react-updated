@@ -9,7 +9,7 @@ function NavBar(props) {
                 <nav className="navbar navbar-findcond pt_header_nav">
                     <LeftNavBar expandNavClick={props.expandNavClick}/>
                     <MiddleNavBar/>
-                    <RightNavBar handleClick={props.handleClick} />
+                    <RightNavBar handleClick={props.handleClick} enableDarkMode={props.enableDarkMode}/>
                 </nav>
             </header>
     )

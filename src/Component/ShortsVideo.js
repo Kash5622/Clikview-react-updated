@@ -98,7 +98,14 @@ function ShortsVideo() {
             }
         ]
     };
-
+    function addPlayBtn(id){
+        let divId="shorts"+id;
+        document.getElementById(`${divId}`).classList.add('activePlayBtn');
+      }
+      function removePlayBtn(id){
+        let divId="shorts"+id;
+        document.getElementById(`${divId}`).classList.remove('activePlayBtn');
+      }
     return (
         <div className="container-home hide_trend">
             <div className="content pt_shadow yp_trans">
@@ -149,14 +156,13 @@ function ShortsVideo() {
                                         <div className="col-md-3 col-sm-6 col-xs-6 keep-padding" data-id="4789"
                                             Style="width: 100%; display: inline-block;">
                                             <div className="video-list short">
-                                                <div className="video-list-image">
+                                                <div className="video-list-image" onMouseEnter={()=>{addPlayBtn(element.videoId)}} onMouseLeave={()=>{removePlayBtn(element.videoId)}}>
                                                     <a href={element.videoImg}
                                                         data-load="?link1=shorts&amp;id=grand-canyon-travel-photography_V2RXS52aPovo7f6.html"
                                                         tabIndex="0">
                                                         <img src={element.videoImg}
                                                             alt="Grand Canyon Travel Photography" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')"
-                                                            onmouseleave="hide_gif(this)">
+                                                        <div className="play_hover_btn" id={"shorts"+element.videoId} >
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="feather"
                                                                 width="24" height="24" viewBox="0 0 24 24"
                                                                 fill="rgba(255, 255, 255, 0.8)">

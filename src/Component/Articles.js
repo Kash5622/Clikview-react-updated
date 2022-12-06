@@ -39,6 +39,14 @@ function Articles() {
             publish:"13/10/22",
         },
     ]
+    function addPlayBtn(id){
+        let divId="articles"+id;
+        document.getElementById(`${divId}`).classList.add('articleHover');
+      }
+      function removePlayBtn(id){
+        let divId="articles"+id;
+        document.getElementById(`${divId}`).classList.remove('articleHover');
+      }
     return (
             <div className="hide_top container-home" >
 
@@ -65,8 +73,8 @@ function Articles() {
                                     return <div className="col-md-6  col-lg-3 video-wrapper article-wrapper pt_article_list" data-id="104" id="article-104" key={element.articleId}>
                                     <div className="pt_article_h_list" Style="background: #303233; border-color: #3d3d3d;">
                                         <div className="video-thumb">
-                                            <a href="https://clikview.com/articles/read/the-real-dr-fauci-the-movie_104.html" data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">
-                                                <img width="200" height="170" src={element.articleImg} alt="The Real Dr.  Fauci - The Movie"/></a>
+                                            <a href="https://clikview.com/articles/read/the-real-dr-fauci-the-movie_104.html" onMouseEnter={()=>{addPlayBtn(element.articleId)}} onMouseLeave={()=>{removePlayBtn(element.articleId)}} data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">
+                                                <img width="200" height="170" src={element.articleImg} className="" id={"articles"+element.articleId}  alt="The Real Dr.  Fauci - The Movie"/></a>
                                         </div>
                                         <div className="video-info">
                                             <div className="article-title">
