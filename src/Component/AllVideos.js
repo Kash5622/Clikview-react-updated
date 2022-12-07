@@ -4,8 +4,10 @@ import {Link,useLocation} from 'react-router-dom';
 
 function AllVideos(props) {
     const { searchOpen, expandNav} = props;
-    const search = useLocation().pathname.slice(11);
-    console.log(useLocation().pathname)
+    const searchData = useLocation().pathname.slice(17);
+    const search=searchData.replace(/_/g," ");
+    // console.log(search)
+    // console.log(useLocation().pathname)
     const data = [
         {
             videoId: 1,

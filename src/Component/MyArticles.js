@@ -17,8 +17,8 @@ function MyArticles(props) {
                         <div class="col-md-12">
                             <div class="articles-content">
                                 <div class="subscriptions-list author-list articles-container">
-                                    <h3 class="recent-articles" Style="display: block;">My articles
-                                        <Link to="/home2/createarticle" class="btn btn-main pull-right" data-load="?link1=create_article">Create article </Link><div class="clear"></div>
+                                    <h3 class="recent-articles" Style="display: block;width:100%" >My articles
+                                        <Link to="/home2/createarticle" class="btn btn-main pull-right" Style="float:right" data-load="?link1=create_article">Create article </Link><div class="clear"></div>
                                     </h3>
                                     <br />
                                     <div class="row">

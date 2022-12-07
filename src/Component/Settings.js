@@ -1,4 +1,5 @@
 import {React,useState} from 'react'
+import { useLocation } from 'react-router-dom';
 import AffiliateLink from './SettingComponent/AffiliateLink';
 import Avatar from './SettingComponent/Avatar';
 import Balance from './SettingComponent/Balance';
@@ -15,7 +16,9 @@ import TwoFactorAuthentication from './SettingComponent/TwoFactorAuthentication'
 import Verification from './SettingComponent/Verification';
 
 function Settings() {
-    const [settingSection, setSettingsSection] = useState("generalsetting")
+    const searchData = useLocation().pathname.slice(16);
+    const [settingSection, setSettingsSection] = useState(searchData)
+    console.log(searchData)
     let settingComponent;
     if(settingSection==="generalsetting"){
         settingComponent=<GeneralSettings/>

@@ -2,10 +2,13 @@ import { React } from 'react'
 // import { $ } from 'react-jquery-plugin'
 // import Category from './Category';
 import MobileSearch from './MobileSearch';
+import {useLocation} from "react-router-dom"
 // import $ from 'jquery';
 
 function VideoDetails(props) {
     const { searchOpen, expandNav } = props;
+    const searchData = useLocation().pathname.slice(17);
+    console.log(searchData);
     //     useEffect(() => {
     //         $('.colorpickerf').colorpicker({
     //             horizontal: true,

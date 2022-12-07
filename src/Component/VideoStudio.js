@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 import Comments from './Comments';
 import Dashboard from './Dashboard';
 import Earning from './Earning';
@@ -10,14 +10,16 @@ import WonEvents from './WonEvents';
 import YourEvents from './YourEvents';
 
 function VideoStudio(props) {
+    const searchData = useLocation().pathname.slice(19);
+    console.log(searchData);
     const { searchOpen, expandNav } = props;
-    const [vStudio, setVStudio] = useState("dashboard");
+    const [vStudio, setVStudio] = useState(searchData);
     let preview;
     if (vStudio === "dashboard") {
         preview = <Dashboard />;
     }
     else if (vStudio === 'videos') {
-        preview = <Videos />
+        preview = <Videos/>
     }
     else if (vStudio === 'mydraftvideos') {
         preview = <MyDraftVideo />

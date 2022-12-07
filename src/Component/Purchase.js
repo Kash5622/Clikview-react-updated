@@ -1,8 +1,23 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import MobileSearch from './MobileSearch';
 
 function Purchase(props) {
     const { searchOpen, expandNav } = props;
+    const [tabStatus,setTabStatus]=useState("videos");
+    useEffect(() => {
+        const allIds = ["videos", "movies", "rentedmovies", "rentedvideos"]
+        allIds.forEach((element) => {
+            console.log(element);
+            if (document.getElementById(element).classList.contains('active')) {
+                document.getElementById(element).classList.remove('active')
+            }
+        });
+        const addActiveClass = (tabStatus) => {
+            document.getElementById(tabStatus).classList.add('active');
+            // console.log('clicked')
+        }
+        addActiveClass(tabStatus);
+    }, [tabStatus]);
     return (
         <div>
             <div className={expandNav ? "main-container shrinkWidth bodyfixed" : "main-container expandWidth"} Style="z-index:-1">
@@ -19,17 +34,17 @@ function Purchase(props) {
                             </div>
                             <div class="tp_vid_fltr_tabs">
                                 <ul class="list-unstyled">
-                                    <li class="active">
-                                        <a href="https://clikview.com/paid-videos?type=videos" data-load="?link1=paid-videos&amp;type=videos"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z"></path></svg> Videos</a>
+                                    <li class="" id='videos' onClick={()=>{setTabStatus("videos")}}>
+                                        <span href="https://clikview.com/paid-videos?type=videos" data-load="?link1=paid-videos&amp;type=videos"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z"></path></svg> Videos</span>
                                     </li>
-                                    <li>
-                                        <a href="https://clikview.com/paid-videos?type=movies" data-load="?link1=paid-videos&amp;type=movies"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18,9H16V7H18M18,13H16V11H18M18,17H16V15H18M8,9H6V7H8M8,13H6V11H8M8,17H6V15H8M18,3V5H16V3H8V5H6V3H4V21H6V19H8V21H16V19H18V21H20V3H18Z"></path></svg> Movies</a>
+                                    <li class="" id='movies' onClick={()=>{setTabStatus("movies")}}>
+                                        <span href="https://clikview.com/paid-videos?type=movies" data-load="?link1=paid-videos&amp;type=movies"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18,9H16V7H18M18,13H16V11H18M18,17H16V15H18M8,9H6V7H8M8,13H6V11H8M8,17H6V15H8M18,3V5H16V3H8V5H6V3H4V21H6V19H8V21H16V19H18V21H20V3H18Z"></path></svg> Movies</span>
                                     </li>
-                                    <li>
-                                        <a href="https://clikview.com/paid-videos?type=rented_movies" data-load="?link1=paid-videos&amp;type=rented_movies"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13 19C13 19.34 13.04 19.67 13.09 20H4C2.9 20 2 19.11 2 18V6C2 4.89 2.9 4 4 4H5L7 8H10L8 4H10L12 8H15L13 4H15L17 8H20L18 4H22V13.81C21.12 13.3 20.1 13 19 13C15.69 13 13 15.69 13 19M23 17.89L20.11 17.64L19 15L17.87 17.64L15 17.89L17.18 19.77L16.5 22.58L19 21.09L21.45 22.58L20.8 19.77L23 17.89Z"></path></svg> Rented Movies</a>
+                                    <li class="" id='rentedmovies' onClick={()=>{setTabStatus("rentedmovies")}}>
+                                        <span href="https://clikview.com/paid-videos?type=rented_movies" data-load="?link1=paid-videos&amp;type=rented_movies"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13 19C13 19.34 13.04 19.67 13.09 20H4C2.9 20 2 19.11 2 18V6C2 4.89 2.9 4 4 4H5L7 8H10L8 4H10L12 8H15L13 4H15L17 8H20L18 4H22V13.81C21.12 13.3 20.1 13 19 13C15.69 13 13 15.69 13 19M23 17.89L20.11 17.64L19 15L17.87 17.64L15 17.89L17.18 19.77L16.5 22.58L19 21.09L21.45 22.58L20.8 19.77L23 17.89Z"></path></svg> Rented Movies</span>
                                     </li>
-                                    <li>
-                                        <a href="https://clikview.com/paid-videos?type=rented_videos" data-load="?link1=paid-videos&amp;type=rented_videos"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12C22 6.46 17.54 2 12 2C10.83 2 9.7 2.19 8.62 2.56L9.32 4.5C10.17 4.16 11.06 3.97 12 3.97C16.41 3.97 20.03 7.59 20.03 12C20.03 16.41 16.41 20.03 12 20.03C7.59 20.03 3.97 16.41 3.97 12C3.97 11.06 4.16 10.12 4.5 9.28L2.56 8.62C2.19 9.7 2 10.83 2 12C2 17.54 6.46 22 12 22C17.54 22 22 17.54 22 12M5.47 3.97C6.32 3.97 7 4.68 7 5.47C7 6.32 6.32 7 5.47 7C4.68 7 3.97 6.32 3.97 5.47C3.97 4.68 4.68 3.97 5.47 3.97M18 12C18 8.67 15.33 6 12 6C8.67 6 6 8.67 6 12C6 15.33 8.67 18 12 18C15.33 18 18 15.33 18 12M15 12L10 15V9"></path></svg> Rented Videos</a>
+                                    <li class="" id='rentedvideos' onClick={()=>{setTabStatus("rentedvideos")}}>
+                                        <span href="https://clikview.com/paid-videos?type=rented_videos" data-load="?link1=paid-videos&amp;type=rented_videos"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12C22 6.46 17.54 2 12 2C10.83 2 9.7 2.19 8.62 2.56L9.32 4.5C10.17 4.16 11.06 3.97 12 3.97C16.41 3.97 20.03 7.59 20.03 12C20.03 16.41 16.41 20.03 12 20.03C7.59 20.03 3.97 16.41 3.97 12C3.97 11.06 4.16 10.12 4.5 9.28L2.56 8.62C2.19 9.7 2 10.83 2 12C2 17.54 6.46 22 12 22C17.54 22 22 17.54 22 12M5.47 3.97C6.32 3.97 7 4.68 7 5.47C7 6.32 6.32 7 5.47 7C4.68 7 3.97 6.32 3.97 5.47C3.97 4.68 4.68 3.97 5.47 3.97M18 12C18 8.67 15.33 6 12 6C8.67 6 6 8.67 6 12C6 15.33 8.67 18 12 18C15.33 18 18 15.33 18 12M15 12L10 15V9"></path></svg> Rented Videos</span>
                                     </li>
                                 </ul>
                             </div>

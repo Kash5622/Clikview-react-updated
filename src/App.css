@@ -6488,7 +6488,7 @@ svg {
 
 .wo_about_wrapper_parent {
   position: absolute;
-  top: 56px;
+  top: 0px;
   width: 100%;
   left: 0px;
   min-height: 280px;
@@ -10270,6 +10270,7 @@ select#type {
   justify-content: space-between;
   border-bottom: 2px solid #e2e2e2;
   margin: 0 0 25px;
+  padding: 10px 0px;
 }
 
 .pt_page_headr .page_head {
@@ -10953,7 +10954,7 @@ select#type {
   display: inline-block;
 }
 
-.tp_vid_fltr_tabs ul li a {
+.tp_vid_fltr_tabs ul li span {
   padding: 10px 16px;
   border-radius: max(0px, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px;
   border: none;
@@ -10963,15 +10964,16 @@ select#type {
   color: #6f6f6f;
   display: block;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.tp_vid_fltr_tabs ul li.selected a,
-.tp_vid_fltr_tabs ul li.active a {
+.tp_vid_fltr_tabs ul li.selected span,
+.tp_vid_fltr_tabs ul li.active span {
   background-color: rgb(4 171 242 / 15%);
   color: #04abf2;
 }
 
-.tp_vid_fltr_tabs ul li a svg {
+.tp_vid_fltr_tabs ul li span svg {
   display: block;
   margin: 0 auto 10px;
   width: 22px;
@@ -20314,7 +20316,6 @@ transition: all .5s;
   }
 }
 
-
 #vidimage-holder{
   display: flex;
   align-items: center;
@@ -20527,7 +20528,7 @@ transition: all .5s;
 .store_create .article_image_renderer img{
       object-fit:contain;
   }
-
+  
   .row-wrapper{
     border-radius: 5px;
     border: 2px solid #323232;
