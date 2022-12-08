@@ -14,7 +14,7 @@ import TravelsandEvents from './TravelandEvents'
 import TrendingVideo from './TrendingVideo'
 
 function Home(props) {
-  const {searchOpen,expandNav,enableDarkMode,setAddActive}=props;
+  const {searchOpen,expandNav,enableDarkMode,setAddActive,}=props;
 
   useEffect(() => {
     
@@ -29,6 +29,7 @@ function Home(props) {
     <>
     <div className={expandNav?"main-container shrinkWidth bodyfixed":"main-container expandWidth"} Style="z-index:-1">
         {searchOpen?<MobileSearch/>:<Category/>}
+        
         <HomeBanner setAddActive={setAddActive}/>
         <Featuredvideo/>
 {/* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -51,11 +52,11 @@ function Home(props) {
     </div>
   </div>
 </div> */}
-        <TrendingVideo/>
+        <TrendingVideo setAddActive={setAddActive}/>
         <ShortsVideo/>
-        <TopVideo/>
-        <Articles/>
-        <LatestVideo/>
+        <TopVideo setAddActive={setAddActive}/>
+        <Articles setAddActive={setAddActive}/>
+        <LatestVideo setAddActive={setAddActive}/>
         <Sports/>
         <TravelsandEvents/>
         <Motivation/>

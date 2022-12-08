@@ -1,11 +1,14 @@
 import React from 'react'
 import {Link} from "react-router-dom"
+import MobileSearch from './MobileSearch';
 
-function ArticleDetails() {
+function ArticleDetails(props) {
+    const { searchOpen, expandNav } = props;
     return (
         <div>
-            <div class="yp_side_menu has_side_menu">
+            <div className={expandNav ? "main-container shrinkWidth bodyfixed" : "main-container expandWidth"} Style="z-index:-1">
                 <div id="main-container" class="main-content  container              " data-logged="true">
+                {searchOpen ? <MobileSearch /> : ""}
                     <div class="ads-placment" id="header_ad_"></div>
                     <div class="announcement-renderer">
 

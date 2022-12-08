@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -100,11 +101,15 @@ function ShortsVideo() {
     };
     function addPlayBtn(id){
         let divId="shorts"+id;
+        let divopacityId="shortvideoList"+id;
         document.getElementById(`${divId}`).classList.add('activePlayBtn');
+        document.getElementById(`${divopacityId}`).classList.add('hoverOnVideo');
       }
       function removePlayBtn(id){
         let divId="shorts"+id;
+        let divopacityId="shortvideoList"+id;
         document.getElementById(`${divId}`).classList.remove('activePlayBtn');
+        document.getElementById(`${divopacityId}`).classList.remove('hoverOnVideo');
       }
     return (
         <div className="container-home hide_trend">
@@ -132,15 +137,15 @@ function ShortsVideo() {
                                         </g>
                                     </g>
                                 </g>
-                            </svg></div> Shorts
+                            </svg></div> Quick View
 
-                            <span className="view_more_link"><a href="https://clikview.com/shorts"
+                            <span className="view_more_link"><Link to="/home2/shortsvideodetails"
                                 data-load="?link1=shorts&amp;id=">Explore more <svg xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor"
                                         d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z">
                                     </path>
-                                </svg></a></span>
+                                </svg></Link></span>
 
                         </h4>
 
@@ -156,13 +161,13 @@ function ShortsVideo() {
                                         <div className="col-md-3 col-sm-6 col-xs-6 keep-padding" data-id="4789"
                                             Style="width: 100%; display: inline-block;">
                                             <div className="video-list short">
-                                                <div className="video-list-image" onMouseEnter={()=>{addPlayBtn(element.videoId)}} onMouseLeave={()=>{removePlayBtn(element.videoId)}}>
-                                                    <a href={element.videoImg}
+                                                <div className="video-list-image" id={"shortvideoList"+element.videoId} onMouseEnter={()=>{addPlayBtn(element.videoId)}} onMouseLeave={()=>{removePlayBtn(element.videoId)}}>
+                                                    <Link to="/home2/shortsvideodetails"
                                                         data-load="?link1=shorts&amp;id=grand-canyon-travel-photography_V2RXS52aPovo7f6.html"
                                                         tabIndex="0">
                                                         <img src={element.videoImg}
                                                             alt="Grand Canyon Travel Photography" />
-                                                        <div className="play_hover_btn" id={"shorts"+element.videoId} >
+                                                        <div className="play_hover_btn_svg" id={"shorts"+element.videoId} >
                                                             <svg xmlns="http://www.w3.org/2000/svg" className="feather"
                                                                 width="24" height="24" viewBox="0 0 24 24"
                                                                 fill="rgba(255, 255, 255, 0.8)">
@@ -191,21 +196,21 @@ function ShortsVideo() {
                                                                 </g>
                                                             </svg>
                                                         </div>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                                 <div className="pt_vid_fixed_height">
                                                     <div className="video-list-title">
-                                                        <a href="https://clikview.com/shorts/grand-canyon-travel-photography_V2RXS52aPovo7f6.html"
+                                                        <Link to="/home2/videodetails/1"
                                                             data-load="?link1=shorts&amp;id=grand-canyon-travel-photography_V2RXS52aPovo7f6.html"
                                                             tabIndex="0">
                                                             <h4 title="Grand Canyon Travel Photography">Grand Canyon
                                                                 Travel Photography</h4>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                     <div className="video-list-by">
-                                                        <span><a href="https://clikview.com/@KajaTravelPhotography"
+                                                        <span><Link to="/home2/timeline"
                                                             data-load="?link1=timeline&amp;id=KajaTravelPhotography"
-                                                            tabIndex="0">KajaTravelPhotography</a></span><br />
+                                                            tabIndex="0">KajaTravelPhotography</Link></span><br />
                                                         <div><span>4 Views</span> <span className="bold">·</span> <span>6
                                                             hours ago</span></div>
                                                     </div>

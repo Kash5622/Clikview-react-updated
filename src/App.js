@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState,  } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './Component/Home';
 import NavBar from './Component/NavBar';
 import SideNavBar from './Component/SideNavBar';
@@ -33,16 +33,31 @@ import ReportingBug from './Component/SettingComponent/ReportingBug';
 import CreateAuction from './Component/CreateAuction';
 import ArticleDetails from './Component/ArticleDetails';
 import FooterComponent from './Component/FooterComponent';
+import ShortsVideoDetails from './Component/ShortsVideoDetails';
 // import { useTransition, animated, } from 'react-spring'
 
 function App() {
   const [searchOpen, setsearchOpen] = useState(false);
   const [expandNav, setexpandNav] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [whatsnew, setwhatsNew] = useState(false);
   const [addActive, setAddActive] = useState('home_menu_');
-
+  
+  // useEffect(() => {
+  //   if(darkMode){
+  //     require('./DarkMode.css')
+  //   }
+    
+  // }, [darkMode])
+  function whatsnewtougle(){
+    setwhatsNew(!whatsnew)
+  }
+  
   const enableDarkMode=()=>{
-    setDarkMode(!darkMode);
+    // setDarkMode(!darkMode);
+    // setTimeout(() => {
+    //   window.location.reload()
+    // }, 1000);
     console.log("clicked")
   }
   const handleClick = () => {
@@ -61,9 +76,9 @@ function App() {
   return (
     <div className='mainContainer' Style="overflow:hidden">
       <Router>
-        <NavBar handleClick={handleClick} expandNavClick={expandNavClick} expandNav={expandNav} enableDarkMode={enableDarkMode} />
+        <NavBar handleClick={handleClick} expandNavClick={expandNavClick} expandNav={expandNav} enableDarkMode={enableDarkMode} whatsnewtougle={whatsnewtougle} whatsnew={whatsnew}/>
         <Routes>
-          <Route exact path='/home2' element={<Home searchOpen={searchOpen} expandNav={expandNav} setAddActive={setAddActive} />} />
+          <Route exact path='/home2' element={<Home searchOpen={searchOpen} expandNav={expandNav} setAddActive={setAddActive}   />} />
           <Route exact path='/home2/allvideos/:Category' element={<AllVideos searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/videodetails/:id' element={<VideoDetails searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/timeline' element={<TimeLine searchOpen={searchOpen} expandNav={expandNav} />} />
@@ -91,6 +106,7 @@ function App() {
           <Route exact path='/home2/createauction' element={<CreateAuction searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/articledetails/:articleid' element={<ArticleDetails searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/footercomponent/:component' element={<FooterComponent searchOpen={searchOpen} expandNav={expandNav} />} />
+          <Route exact path='/home2/shortsvideodetails' element={<ShortsVideoDetails searchOpen={searchOpen} expandNav={expandNav} />} />
         </Routes>
         {/* {transition((style, item) => { */}
           

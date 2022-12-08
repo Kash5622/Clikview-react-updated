@@ -1,9 +1,9 @@
-import { React,useEffect } from 'react'
+import { React, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { animated, useSpring } from '@react-spring/web'
 
 function ExpandSideBar(props) {
-    const {expandNavClick,setAddActive,addActive}=props
+    const { expandNavClick, setAddActive, addActive } = props
     // let statusActive=addActive;
     const styles = useSpring({
         from: {
@@ -15,7 +15,7 @@ function ExpandSideBar(props) {
         config: { mass: 5, tension: 350, friction: 40 },
     })
     useEffect(() => {
-        const allIds = ["home_menu_", "history_menu_", "paid_videos_", "auction", "articles_menu_", "top_menu_", "trending_menu_", "latest_menu_", "movies_menu_", "popular_channels_menu_", "shorts_menu_","live"]
+        const allIds = ["home_menu_", "history_menu_", "paid_videos_", "auction", "articles_menu_", "top_menu_", "trending_menu_", "latest_menu_", "movies_menu_", "popular_channels_menu_", "shorts_menu_", "live","reportingBug"]
         allIds.forEach((element) => {
             console.log(element);
             if (document.getElementById(element).classList.contains('active')) {
@@ -129,7 +129,7 @@ function ExpandSideBar(props) {
                             </Link>
                         </li>
                         <li className="hide-from-mobile " id="shorts_menu_" onClick={() => { setAddActive("shorts_menu_") }}>
-                            <Link to="/home2/" data-load="?link1=shorts&amp;id=">
+                            <Link to="/home2/shortsvideodetails" data-load="?link1=shorts&amp;id=">
                                 <svg version="1.1" className="feather" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 168.071 168.071" >
                                     <g>
                                         <g>
@@ -143,7 +143,7 @@ function ExpandSideBar(props) {
                                         </g>
                                     </g>
                                 </svg>
-                                <span>Shorts</span>
+                                <span>Quick View</span>
                             </Link>
                         </li>
                     </ul>
@@ -190,9 +190,30 @@ function ExpandSideBar(props) {
                         <Link to="/home2/footercomponent/Terma_Of_Use" data-load="?link1=terms&amp;type=terms">Terms of use</Link>&nbsp;·&nbsp;
                         <Link to="/home2/footercomponent/Privacy_Policy" data-load="?link1=terms&amp;type=privacy-policy">Privacy Policy</Link>&nbsp;·&nbsp;
                         <Link to="/home2/footercomponent/About_us" data-load="?link1=terms&amp;type=about-us">About us</Link>&nbsp;·&nbsp;
-                        <Link to="/home2/reportbug" data-load="?link1=contact">Report Bug</Link>
-
-                        &nbsp;·&nbsp;<Link to="/" data-toggle="modal" data-target="#select-language">Language</Link>
+                        <Link to="/home2/reportbug" data-load="?link1=contact">Report Bug</Link> &nbsp;·&nbsp;
+                        <Link to="/home2/footercomponent/Contact_Us" data-load="?link1=contact">Contact Us</Link> &nbsp;·&nbsp;
+                        <Link to="/home2/footercomponent/Feature" data-load="?link1=contact">Frature</Link> &nbsp;·&nbsp;
+                        <span  data-bs-toggle="modal" data-bs-target="#select-language" Style="cursor:pointer">Language</span>
+                        <div id="select-language" class="modal matdialog et_plus lang_select_modal in" data-keyboard="false" >
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-body" id="pt_language_modal">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="language_info">
+                                                    <h3>Language</h3>
+                                                    <img src="https://clikview.com/themes/youplay/img/language.svg" alt=''/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <ul class="lang_modal">
+                                                    <li class="language_select"><a href="?lang=english" rel="nofollow" class="english">English</a></li><li class="language_select"><a href="?lang=arabic" rel="nofollow" class="arabic">Arabic</a></li><li class="language_select"><a href="?lang=dutch" rel="nofollow" class="dutch">Dutch</a></li><li class="language_select"><a href="?lang=french" rel="nofollow" class="french">French</a></li><li class="language_select"><a href="?lang=german" rel="nofollow" class="german">German</a></li><li class="language_select"><a href="?lang=russian" rel="nofollow" class="russian">Russian</a></li><li class="language_select"><a href="?lang=spanish" rel="nofollow" class="spanish">Spanish</a></li><li class="language_select"><a href="?lang=turkish" rel="nofollow" class="turkish">Turkish</a></li><li class="language_select"><a href="?lang=hindi" rel="nofollow" class="hindi">Hindi</a></li><li class="language_select"><a href="?lang=chinese" rel="nofollow" class="chinese">Chinese</a></li><li class="language_select"><a href="?lang=urdu" rel="nofollow" class="urdu">Urdu</a></li><li class="language_select"><a href="?lang=indonesian" rel="nofollow" class="indonesian">Indonesian</a></li><li class="language_select"><a href="?lang=croatian" rel="nofollow" class="croatian">Croatian</a></li><li class="language_select"><a href="?lang=hebrew" rel="nofollow" class="hebrew">Hebrew</a></li><li class="language_select"><a href="?lang=bengali" rel="nofollow" class="bengali">Bengali</a></li><li class="language_select"><a href="?lang=japanese" rel="nofollow" class="japanese">Japanese</a></li><li class="language_select"><a href="?lang=portuguese" rel="nofollow" class="portuguese">Portuguese</a></li><li class="language_select"><a href="?lang=italian" rel="nofollow" class="italian">Italian</a></li><li class="language_select"><a href="?lang=persian" rel="nofollow" class="persian">Persian</a></li><li class="language_select"><a href="?lang=swedish" rel="nofollow" class="swedish">Swedish</a></li><li class="language_select"><a href="?lang=vietnamese" rel="nofollow" class="vietnamese">Vietnamese</a></li><li class="language_select"><a href="?lang=danish" rel="nofollow" class="danish">Danish</a></li><li class="language_select"><a href="?lang=filipino" rel="nofollow" class="filipino">Filipino</a></li>							</ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="clear"></div>
                         <p className="copyright">Copyright © 2022 ClikView. All rights reserved.</p>
 

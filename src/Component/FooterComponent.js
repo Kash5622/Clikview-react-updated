@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Aboutus from './FooterComponents/Aboutus';
 import Faq from './FooterComponents/Faq';
+import Feature from './FooterComponents/Feature';
 import PrivacyPolicy from './FooterComponents/PrivacyPolicy';
 import RefundPolicy from './FooterComponents/RefundPolicy';
 import Termsofuse from './FooterComponents/Termsofuse';
@@ -34,6 +35,12 @@ function FooterComponent(props) {
     }
     else if (footerSection === "Terma_Of_Use") {
         footercomponent = <Termsofuse />
+    }
+    else if (footerSection === "Contact_Us") {
+        footercomponent = <Aboutus />
+    }
+    else if (footerSection === "Feature") {
+        footercomponent = <Feature/>
     }
 
     return (

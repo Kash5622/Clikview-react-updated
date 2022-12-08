@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MobileSearch from './MobileSearch';
 
 function GoPro(props) {
-    const { searchOpen, expandNav } = props;
+    const { searchOpen, expandNav, } = props;
+    const [allSub, setAllsub ] = useState(false);
     return (
         <div>
             <div className={expandNav ? "main-container shrinkWidth bodyfixed" : "main-container expandWidth"} Style="z-index:-1">
-            <div id="main-container" className="main-content  container">
-            {searchOpen ? <MobileSearch /> : ""}
+                <div id="main-container" className="main-content  container">
+                    {searchOpen ? <MobileSearch /> : ""}
                     <div className="ads-placment" id="header_ad_"></div>
                     <div className="announcement-renderer">
 
@@ -71,9 +72,9 @@ function GoPro(props) {
                                     </div>
                                     <form Style="display: flex; justify-content: end; align-items: center; margin-right: 2rem; background-color: #043d5ae8; padding: 1rem 4rem; border: 2px solid gold; border-radius: 50px; width: 25rem; justify-self: center;">
                                         <label className="toggler toggler--is-active" id="filt-monthly">Monthly</label>
-                                        <label className="switcher">
+                                        <label className="switcher" >
                                             <input className="package-duration" type="checkbox" name="sub" id="package-duration" value="0" />
-                                            <span className="slider round"></span>
+                                            <span className="slider round" onClick={()=>{setAllsub(!allSub)}}></span>
                                         </label>
                                         <label className="toggler toggler--is-active" id="filt-monthly">Yearly</label>
                                     </form>
@@ -119,7 +120,7 @@ function GoPro(props) {
                                             </div>
                                             <div className="right-block">
                                                 <h5 className="package-price monthly"><span>$</span><b>
-                                                    19.95 /mo
+                                                    {allSub? "199.50 /yr" : "19.95 /mo"}
                                                 </b></h5>
                                                 <input type="hidden" name="monthly_package" id="monthly_package" value="19.95" />
                                                 <h5 className="package-price annual" Style="display: none;"><span>$</span><b>
@@ -187,12 +188,12 @@ function GoPro(props) {
                                                     <p> 								5 Spotlight Videos 							</p> 							<p> 								Sell 8 Products 							</p> 							<p> 								2 x Go Live per month							</p> 							<p>Access to Arbitrage Wallet</p> 							<p>Create Auction</p> 							 														<p> 								Upload up to 20GB per month						</p> 							<p>No ads will show up</p> 													<p>Verified badge</p> <p>Share Feature Ideas</p> <p>Withdraw Affiliate Commissions</p> 							 							<p>Sell videos at any price</p> 																	</div>
                                             </div>
                                             <div className="right-block">
+
                                                 <h5 className="package-price monthly"><span>$</span><b>
-                                                    39.95 /mo
+                                                    {allSub? "399.50 /yr" : "39.95 /mo"}
                                                 </b></h5>
                                                 <input type="hidden" name="monthly_package" id="monthly_package" value="39.95" />
                                                 <h5 className="package-price annual" Style="display: none;"><span>$</span><b>
-                                                    399.50 /yr
                                                 </b></h5>
                                                 <input type="hidden" name="annual_package" id="annual_package" value="399.50" />
                                                 <div className="go-pro-pkg-purchase">
@@ -257,7 +258,7 @@ function GoPro(props) {
                                             </div>
                                             <div className="right-block">
                                                 <h5 className="package-price monthly"><span>$</span><b>
-                                                    59.95 /mo
+                                                {allSub? "599.50 /yr" : "59.95 /mo"}
                                                 </b></h5>
                                                 <input type="hidden" name="monthly_package" id="monthly_package" value="59.95" />
                                                 <h5 className="package-price annual" Style="display: none;"><span>$</span><b>

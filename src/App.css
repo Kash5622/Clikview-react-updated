@@ -594,8 +594,19 @@ body {
   padding-bottom: 56.25%;
   border-radius: max(0px, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px;
 }
-
-.home-page-categories .videos .video-list .video-list-image .play_hover_btn,
+.play_hover_btn_svg svg{
+  left: 50%;
+    position: absolute;
+    top: 50%;
+    visibility: hidden;
+    margin: 0;
+    transform: translate(-50%, -50%) scale(.7);
+    width: 45px !important;
+    height: 45px !important;
+    stroke-width: 1.2px;
+    transition: transform .2s ease;
+}
+/* .home-page-categories .videos .video-list .video-list-image .play_hover_btn,
 .video-latest-list .video-thumb .play_hover_btn {
   position: absolute;
   top: 0;
@@ -609,7 +620,7 @@ body {
   transition: all 0.2s ease;
   overflow: hidden;
   border-radius: max(0px, min(8px, calc((100vw - 4px - 100%) * 9999))) / 8px;
-}
+} */
 
 .home-page-categories .videos .video-list .video-list-image .play_hover_btn svg.feather,
 .video-latest-list .video-thumb .play_hover_btn svg.feather {
@@ -640,7 +651,6 @@ body {
 .video-latest-list .video-thumb img {
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
@@ -5593,7 +5603,22 @@ ul.notfi-dropdown ul#notifications-list li div.notifications-info time svg {
   transition: all 0.1s ease;
   font-family: Roboto;
 }
-
+.quickviewheader{
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quickviewheader span{
+  padding: 0px 20px;
+  font-size: 25px;
+}
+.quickviewheader div svg{
+  height: 60px;
+  width: 50px;
+}
 /*.load-related-videos button span { margin: 0px 5px; }*/
 
 .load-related-videos button:hover {
@@ -6887,7 +6912,27 @@ body.fab_open .fixed-action-btn {
   max-width: 1400px;
   padding: 0 15px;
 }
-
+.container-home-2{
+  margin: auto;
+  width: 97%;
+  max-width: 43%;
+}
+.container-home-2 .home-page-categories .videos .slick-slider .slick-prev{
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  left: 110% !important;
+  top: 80% !important;
+  transform: rotate(90deg);
+}
+.container-home-2 .home-page-categories .videos .slick-slider .slick-next{
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  left: 110% !important;
+  top: 87% !important;
+  transform: rotate(90deg);
+}
 .pt_home_top_m {
   margin: -150px 0 0;
   position: relative;
@@ -8390,8 +8435,6 @@ body .pp_mat_input .bootstrap-select {
   right: 0;
 
   bottom: 0;
-
-  left: 0;
 }
 
 .pt_history .video-wrapper .video-thumb .time {
@@ -13331,15 +13374,15 @@ body .pt_shorts_swipe {
 
 }
 
-.pt_shorts_swipe .swiper-wrapper .user_avatar img {
+.user_avatar a img {
 
-  width: 35px;
-
-  height: 35px;
-
-  border-radius: 50%;
-
-  object-fit: cover;
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  position: absolute !important;
+  margin-right: 18px !important;
+  right: 0px !important;
 
 }
 
@@ -18595,7 +18638,6 @@ svg.feather {
 .video-latest-list .video-thumb img {
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
@@ -19546,10 +19588,13 @@ nav.navbar-findcond .search-header {
   display: none;
   width: 100%;
 }
-
-.activePlayBtn {
+.hoverOnVideo a img{
+  opacity: 0.8;
+}
+.activePlayBtn svg{
   opacity: 1 !important;
   visibility: visible !important;
+  transform: translate(-50%, -50%) scale(1) !important;
 }
 
 .articleHover {
@@ -20555,4 +20600,31 @@ transition: all .5s;
   margin-left: auto;
   margin-top: 3rem;
   font-size: 2rem;
+}
+
+@media screen and (max-width:300px) {
+  nav.navbar-findcond .yp_slide_menu span{
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 15px;
+  }
+  .pt_header_nav .left-part{
+    width: 84px !important;
+  }
+  .nav>li>a{
+    padding: 0px !important;
+  }
+}
+@media (min-width:300px)  and (max-width:500px) {
+  nav.navbar-findcond .yp_slide_menu span{
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 25px;
+  }
+  .pt_header_nav .left-part{
+    width: 150px !important;
+  }
+  .nav>li>a{
+    padding: 0px !important;
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
-function Articles() {
+function Articles(props) {
     const data=[
         {
             articleId:1,
@@ -60,7 +61,7 @@ function Articles() {
 
                                 <div Style="background:#673ab7"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-bar-chart"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div> Articles
 
-                                <span className="view_more_link"><a href="https://clikview.com/articles" data-load="?link1=articles">Explore more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></a></span>
+                                <span className="view_more_link" onClick={()=>{props.setAddActive("articles_menu_")}} ><Link to="/home2/allarticles" data-load="?link1=articles">Explore more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></Link></span>
 
                             </h4>
 
@@ -73,30 +74,30 @@ function Articles() {
                                     return <div className="col-md-6  col-lg-3 video-wrapper article-wrapper pt_article_list" data-id="104" id="article-104" key={element.articleId}>
                                     <div className="pt_article_h_list" Style="background: #303233; border-color: #3d3d3d;">
                                         <div className="video-thumb">
-                                            <a href="https://clikview.com/articles/read/the-real-dr-fauci-the-movie_104.html" onMouseEnter={()=>{addPlayBtn(element.articleId)}} onMouseLeave={()=>{removePlayBtn(element.articleId)}} data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">
-                                                <img width="200" height="170" src={element.articleImg} className="" id={"articles"+element.articleId}  alt="The Real Dr.  Fauci - The Movie"/></a>
+                                            <Link to="home2/articledetails/2" onMouseEnter={()=>{addPlayBtn(element.articleId)}} onMouseLeave={()=>{removePlayBtn(element.articleId)}} data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">
+                                                <img width="200" height="170" src={element.articleImg} className="" id={"articles"+element.articleId}  alt="The Real Dr.  Fauci - The Movie"/></Link>
                                         </div>
                                         <div className="video-info">
                                             <div className="article-title">
-                                                <h4><a href="https://clikview.com/articles/read/the-real-dr-fauci-the-movie_104.html" data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">{element.articleTitle}</a> </h4>
+                                                <h4><Link to="home2/articledetails/2" data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html">{element.articleTitle}</Link> </h4>
                                             </div>
                                             <div className="article-desc" Style="color:white">
                                                 <p>{element.articleDesc}</p>
                                             </div>
                                             <div className="postFooter">
                                                 <div className="article_pub_user">
-                                                    <a href="https://clikview.com/@Xileen" data-load="?link1=timeline&amp;id=Xileen">
+                                                    <Link href="/home2/timeline" data-load="?link1=timeline&amp;id=Xileen">
                                                         <img src={element.userImg} alt="Xileen avatar" />
-                                                    </a>&nbsp;&nbsp;
+                                                    </Link>&nbsp;&nbsp;
                                                     <div>
-                                                        <h6><a href="https://clikview.com/@Xileen" >{element.userName}</a></h6>
+                                                        <h6><Link href="/home2/timeline" >{element.userName}</Link></h6>
                                                         <span className="article-views">{element.publish}</span>
                                                     </div>
                                                 </div>
                                                 <div className="u-floatLeft">
-                                                    <a href="https://clikview.com/articles/read/the-real-dr-fauci-the-movie_104.html" data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html" className="btn btn-sm btn-mat btn-default">
+                                                    <Link to="/home2/articledetails/5" data-load="?link1=read&amp;id=the-real-dr-fauci-the-movie_104.html" className="btn btn-sm btn-mat btn-default">
                                                         Read more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>

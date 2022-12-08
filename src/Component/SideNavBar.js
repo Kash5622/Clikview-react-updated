@@ -116,7 +116,7 @@ function SideNavBar(props) {
                             </Link>
                         </li>
                         <li className="hide-from-mobile " id="shorts_menu_" onClick={() => { setAddActive("shorts_menu_") }}>
-                            <Link to="/home2/" data-load="?link1=shorts&amp;id=">
+                            <Link to="/home2/shortsvideodetails" data-load="?link1=shorts&amp;id=">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.071 168.071" >
                                     {/* <g>
                                     <g> */}
