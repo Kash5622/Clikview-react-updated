@@ -389,7 +389,7 @@ function CvMainWallet(props) {
                                 </div>
                             </div>
                         </div>
-                        <form class="replenish-gold-token-wallet-form pt_wallet_forms hidden">
+                        {/* <form class="replenish-gold-token-wallet-form pt_wallet_forms hidden">
                             <div class="form-group">
                                 <label>
                                     <span>Buy Gold Token</span>
@@ -532,7 +532,7 @@ function CvMainWallet(props) {
                             <div class="form-group">
                                 <small id="token_text"></small>
                             </div>
-                        </form>
+                        </form> */}
 
                         <div class="modal fade matdialog" id="bank_transfer_modal" role="dialog" data-keyboard="false" Style="overflow-y: auto;">
                             <div class="modal-dialog">

@@ -32,7 +32,7 @@ function ExpandSideBar(props) {
 
         <div className='expandNav '>
             <div >
-                <animated.div style={styles} className="yp_side_drawer" >
+                <animated.div style={styles} className="yp_side_drawer"  >
                     <span className="open_side_menu_head hide-from-mobile">
                         <span >
                             <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" onClick={expandNavClick}>

@@ -2,6 +2,10 @@ import { React } from 'react'
 
 function GeneralSettings() {
     
+    function handleonchange(){
+
+    }
+    
     return (
         <div>
             <form class="form-horizontal user-setting-panel pt_forms pt_shadow" id="general-settings" method="POST">
@@ -13,13 +17,13 @@ function GeneralSettings() {
                     <div class="form-group col-lg-6">
                         <label class="col-md-12" for="username">Username</label>
                         <div class="col-md-12">
-                            <input id="username" name="username" type="text" placeholder="" class="form-control input-md" value="somac" />
+                            <input id="username" name="username" type="text" placeholder="" class="form-control input-md" onChange={handleonchange} />
                         </div>
                     </div>
                     <div class="form-group col-lg-6">
                         <label class="col-md-12" for="email">E-mail address</label>
                         <div class="col-md-12">
-                            <input id="email" name="email" type="text" placeholder="" class="form-control input-md" value="somac089@gmail.com" />
+                            <input id="email" name="email" type="text" placeholder="" class="form-control input-md" onChange={handleonchange} />
                         </div>
                     </div>
                     <div class="form-group col-lg-6">
@@ -151,9 +155,9 @@ function GeneralSettings() {
                     <hr />
 
                 </div>
-                <input type="hidden" name="hash_id" value="d0b4db2bc4e12a863e48a7d375e595b36af9b69a" />
-                <input type="hidden" name="user_id" value="2822" />
-                <input type="hidden" name="cf" value="0" />
+                <input type="hidden" name="hash_id" onChange={handleonchange}  />
+                <input type="hidden" name="user_id" onChange={handleonchange} />
+                <input type="hidden" name="cf" onChange={handleonchange}  />
                 <br />
                 <div class="">
                     <button id="submit" name="submit" class="btn btn-main setting-panel-mdbtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Save</button>

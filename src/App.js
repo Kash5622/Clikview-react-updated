@@ -34,6 +34,8 @@ import CreateAuction from './Component/CreateAuction';
 import ArticleDetails from './Component/ArticleDetails';
 import FooterComponent from './Component/FooterComponent';
 import ShortsVideoDetails from './Component/ShortsVideoDetails';
+import ImportVideo from './Component/ImportVideo';
+import QuickUpload from './Component/QuickUpload';
 // import { useTransition, animated, } from 'react-spring'
 
 function App() {
@@ -107,6 +109,8 @@ function App() {
           <Route exact path='/home2/articledetails/:articleid' element={<ArticleDetails searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/footercomponent/:component' element={<FooterComponent searchOpen={searchOpen} expandNav={expandNav} />} />
           <Route exact path='/home2/shortsvideodetails' element={<ShortsVideoDetails searchOpen={searchOpen} expandNav={expandNav} />} />
+          <Route exact path='/home2/importvideo' element={<ImportVideo searchOpen={searchOpen} expandNav={expandNav} />} />
+          <Route exact path='/home2/quickupload' element={<QuickUpload searchOpen={searchOpen} expandNav={expandNav} />} />
         </Routes>
         {/* {transition((style, item) => { */}
           

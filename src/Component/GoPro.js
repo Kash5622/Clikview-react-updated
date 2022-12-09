@@ -3,12 +3,124 @@ import MobileSearch from './MobileSearch';
 
 function GoPro(props) {
     const { searchOpen, expandNav, } = props;
-    const [allSub, setAllsub ] = useState(false);
+    const [allSub, setAllsub] = useState(false);
+    const [subscripprice,setSubscripprice]=useState()
+    const [subscriptag,setSubscriptag]=useState()
+    const [upgrade, setUpgrade] = useState()
+    function subscripShow(id){
+        if(id==="basic"){
+            setSubscripprice("Basic ")
+            setSubscriptag("Great for starter")
+        }
+        else if(id==="profrssional"){
+            setSubscripprice("Professional ")
+            setSubscriptag("Great for scaling")
+        }
+        else if(id==="advanced"){
+            setSubscripprice("Advanced ")
+            setSubscriptag("Great for growth")
+        }
+    }
+
     return (
         <div>
             <div className={expandNav ? "main-container shrinkWidth bodyfixed" : "main-container expandWidth"} Style="z-index:-1">
                 <div id="main-container" className="main-content  container">
                     {searchOpen ? <MobileSearch /> : ""}
+                    {/* <!-- Button trigger modal --> */}
+                    {/* <button type="button" class="btn btn-primary" >
+                        Launch demo modal
+                    </button> */}
+
+                    {/* <!-- Modal --> */}
+                    <div class="modal fade" id="subModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <form class="go_pro_payment_form pt_wallet_forms clone">
+                                        <input type="hidden" name="pkg_val" id="pkg_val" value="19.95" />
+                                        <input type="hidden" name="pkg_id" id="pkg_id" value="basic" />
+                                        <div class="form-group" Style="display:flex;justify-content: space-between;">
+                                            <label>
+                                                <span id="upgrade_plan_name">Upgrade To &nbsp;{subscripprice}&nbsp;({allSub?"yearly":"monthly"})</span>
+                                            </label>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" Style="background:transparent">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="form-group" id="paymentProcess" Style="display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;">
+                                            <small id="plan_text">{subscriptag}</small>
+                                            <label class="radio-label" Style="display:none">
+                                                <input type="radio" name="upgrade_plan" id="upgrade_plan_wallet" value="1" />
+                                                <span class="btn radio-btn">Purchase from Wallet</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="upgrade_plan" id="upgrade_plan_card" value="2" checked="" />
+                                                <span class="btn radio-btn">Purchase with Credit / Debit card</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" id="insufficientWallet" Style="display:none;">
+                                            <div class="wallet_empty_state">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" > <path Style="fill:#455A64;" d="M394.667,73.532H117.333C52.561,73.603,0.071,126.093,0,190.865v21.333 c0,5.891,4.776,10.667,10.667,10.667h490.667c5.891,0,10.667-4.776,10.667-10.667v-21.333 C511.929,126.093,459.439,73.603,394.667,73.532z"></path> <path Style="fill:#4CAF50;" d="M436.203,143.42L391.04,53.095C372.599,16.21,327.75,1.259,290.865,19.699 c-0.669,0.334-1.332,0.679-1.991,1.033L69.611,138.791c-5.184,2.798-7.118,9.269-4.32,14.453c1.86,3.447,5.46,5.596,9.376,5.6h352 c5.891,0,10.667-4.776,10.666-10.667c0-1.659-0.387-3.295-1.13-4.778V143.42z"></path> <path Style="fill:#607D8B;" d="M74.667,137.532h362.667c41.237,0,74.667,33.429,74.667,74.667v213.333 c0,41.237-33.429,74.667-74.667,74.667H74.667C33.429,500.199,0,466.769,0,425.532V212.199C0,170.961,33.429,137.532,74.667,137.532 z"></path> <path Style="fill:#455A64;" d="M501.333,244.199H416c-41.237,0.022-74.649,33.468-74.628,74.706 c0.022,41.207,33.421,74.606,74.628,74.628h85.333c5.891,0,10.667-4.776,10.667-10.667v-128 C512,248.974,507.224,244.199,501.333,244.199z"></path> <circle Style="fill:#90A4AE;" cx="416" cy="318.865" r="32"></circle></svg>
+                                                You don't have enough balance to purchase, please top up your wallet.
+                                                <a href="https://clikview.com/wallet" onclick="SetPageCookie(''+type+'',''+id+'')" class="btn btn-main">CV Main Wallet
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr/>
+                                    <div class="swal2-buttonswrapper" Style="display: block;"><button type="button" class="swal2-confirm btn btn-success btn-block pt_wallet_btn" Style="width:90%;border-radius:20px;height:50px" aria-label="">Proceed</button><button type="button" class="swal2-cancel btn btn-default btn-block pt_wallet_btn" aria-label="" Style="display: none;">No</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="subModel2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" Style="min-width:375px">
+                                    <form class="go_pro_payment_form pt_wallet_forms clone">
+                                        <input type="hidden" name="pkg_val" id="pkg_val" value="19.95" />
+                                        <input type="hidden" name="pkg_id" id="pkg_id" value="basic" />
+                                        <div class="form-group" Style="display:flex;justify-content: space-between;">
+                                            <label>
+                                                <span id="upgrade_plan_name">Upgrade To Life Time</span>
+                                            </label>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" Style="background:transparent">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="form-group" id="paymentProcess" Style="display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;">
+                                            <small id="plan_text">You have made a brilliant choice</small>
+                                            {/* <label class="radio-label" Style="display:none">
+                                                <input type="radio" name="upgrade_plan" id="upgrade_plan_wallet" value="1" />
+                                                <span class="btn radio-btn">Purchase from Wallet</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="upgrade_plan" id="upgrade_plan_card" value="2" checked="" />
+                                                <span class="btn radio-btn">Purchase with Credit / Debit card</span>
+                                            </label> */}
+                                        </div>
+                                        <div class="form-group" id="insufficientWallet" Style="display:none;">
+                                            <div class="wallet_empty_state">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" > <path Style="fill:#455A64;" d="M394.667,73.532H117.333C52.561,73.603,0.071,126.093,0,190.865v21.333 c0,5.891,4.776,10.667,10.667,10.667h490.667c5.891,0,10.667-4.776,10.667-10.667v-21.333 C511.929,126.093,459.439,73.603,394.667,73.532z"></path> <path Style="fill:#4CAF50;" d="M436.203,143.42L391.04,53.095C372.599,16.21,327.75,1.259,290.865,19.699 c-0.669,0.334-1.332,0.679-1.991,1.033L69.611,138.791c-5.184,2.798-7.118,9.269-4.32,14.453c1.86,3.447,5.46,5.596,9.376,5.6h352 c5.891,0,10.667-4.776,10.666-10.667c0-1.659-0.387-3.295-1.13-4.778V143.42z"></path> <path Style="fill:#607D8B;" d="M74.667,137.532h362.667c41.237,0,74.667,33.429,74.667,74.667v213.333 c0,41.237-33.429,74.667-74.667,74.667H74.667C33.429,500.199,0,466.769,0,425.532V212.199C0,170.961,33.429,137.532,74.667,137.532 z"></path> <path Style="fill:#455A64;" d="M501.333,244.199H416c-41.237,0.022-74.649,33.468-74.628,74.706 c0.022,41.207,33.421,74.606,74.628,74.628h85.333c5.891,0,10.667-4.776,10.667-10.667v-128 C512,248.974,507.224,244.199,501.333,244.199z"></path> <circle Style="fill:#90A4AE;" cx="416" cy="318.865" r="32"></circle></svg>
+                                                You don't have enough balance to purchase, please top up your wallet.
+                                                <a href="https://clikview.com/wallet" onclick="SetPageCookie(''+type+'',''+id+'')" class="btn btn-main">CV Main Wallet
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr/>
+                                    <div class="swal2-buttonswrapper" Style="display: block;"><button type="button" class="swal2-confirm btn btn-success btn-block pt_wallet_btn" Style="width:90%;border-radius:20px;height:50px" aria-label="">Proceed</button><button type="button" class="swal2-cancel btn btn-default btn-block pt_wallet_btn" aria-label="" Style="display: none;">No</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="ads-placment" id="header_ad_"></div>
                     <div className="announcement-renderer">
 
@@ -74,7 +186,7 @@ function GoPro(props) {
                                         <label className="toggler toggler--is-active" id="filt-monthly">Monthly</label>
                                         <label className="switcher" >
                                             <input className="package-duration" type="checkbox" name="sub" id="package-duration" value="0" />
-                                            <span className="slider round" onClick={()=>{setAllsub(!allSub)}}></span>
+                                            <span className="slider round" onClick={() => { setAllsub(!allSub) }}></span>
                                         </label>
                                         <label className="toggler toggler--is-active" id="filt-monthly">Yearly</label>
                                     </form>
@@ -120,7 +232,7 @@ function GoPro(props) {
                                             </div>
                                             <div className="right-block">
                                                 <h5 className="package-price monthly"><span>$</span><b>
-                                                    {allSub? "199.50 /yr" : "19.95 /mo"}
+                                                    {allSub ? "199.50 /yr" : "19.95 /mo"}
                                                 </b></h5>
                                                 <input type="hidden" name="monthly_package" id="monthly_package" value="19.95" />
                                                 <h5 className="package-price annual" Style="display: none;"><span>$</span><b>
@@ -138,7 +250,7 @@ function GoPro(props) {
                                                                 Upgrade
                                                             </button>--> */}
 
-                                                    <button className="btn btn-main pro-bg monthly" Style="background: #BF40BF;" onclick="PayWithV2('19.95','basic','monthly');">
+                                                    <button className="btn btn-main pro-bg monthly" Style="background: #BF40BF;" onclick="PayWithV2('19.95','basic','monthly');" data-bs-toggle="modal" data-bs-target="#subModel" onClick={()=>{subscripShow("basic")}}>
                                                         Upgrade
                                                     </button>
                                                     <button className="btn btn-main pro-bg annual" Style="display: none; background: #BF40BF;" onclick="PayWithV2('199.50','basic','annual');">
@@ -190,7 +302,7 @@ function GoPro(props) {
                                             <div className="right-block">
 
                                                 <h5 className="package-price monthly"><span>$</span><b>
-                                                    {allSub? "399.50 /yr" : "39.95 /mo"}
+                                                    {allSub ? "399.50 /yr" : "39.95 /mo"}
                                                 </b></h5>
                                                 <input type="hidden" name="monthly_package" id="monthly_package" value="39.95" />
                                                 <h5 className="package-price annual" Style="display: none;"><span>$</span><b>
@@ -207,7 +319,7 @@ function GoPro(props) {
                                                                     Upgrade
                                                                 </button>--> */}
 
-                                                    <button className="btn btn-main pro-bg monthly" Style="background: #cf8402;" onclick="PayWithV2('39.95','advanced','monthly');">
+                                                    <button className="btn btn-main pro-bg monthly" Style="background: #cf8402;" onclick="PayWithV2('39.95','advanced','monthly');"  data-bs-toggle="modal" data-bs-target="#subModel" onClick={()=>{subscripShow("advanced")}}>
                                                         Upgrade
                                                     </button>
                                                     <button className="btn btn-main pro-bg annual" Style="display: none; background: #cf8402;" onclick="PayWithV2('399.50','advanced','annual');">
@@ -258,7 +370,7 @@ function GoPro(props) {
                                             </div>
                                             <div className="right-block">
                                                 <h5 className="package-price monthly"><span>$</span><b>
-                                                {allSub? "599.50 /yr" : "59.95 /mo"}
+                                                    {allSub ? "599.50 /yr" : "59.95 /mo"}
                                                 </b></h5>
                                                 <input type="hidden" name="monthly_package" id="monthly_package" value="59.95" />
                                                 <h5 className="package-price annual" Style="display: none;"><span>$</span><b>
@@ -276,7 +388,7 @@ function GoPro(props) {
                                                                         Upgrade
                                                                     </button>--> */}
 
-                                                    <button className="btn btn-main pro-bg monthly" Style="background: #FF0000;" onclick="PayWithV2('59.95','professional','monthly');">
+                                                    <button className="btn btn-main pro-bg monthly" Style="background: #FF0000;" onclick="PayWithV2('59.95','professional','monthly');"  data-bs-toggle="modal" data-bs-target="#subModel" onClick={()=>{subscripShow("profrssional")}}>
                                                         Upgrade
                                                     </button>
                                                     <button className="btn btn-main pro-bg annual" Style="display: none; background: #FF0000;" onclick="PayWithV2('599.50','professional','annual');">
@@ -313,7 +425,7 @@ function GoPro(props) {
                                                     {/* <!--<button className="btn btn-main free-bg" onclick="PayUsingWalletV2('LIFE','show',0,'2997.00')">
                                                                         Upgrade
                                                                     </button>--> */}
-                                                    <button className="btn btn-main free-bg" onclick="payupgradewallet();">
+                                                    <button className="btn btn-main free-bg" onclick="payupgradewallet();"  data-bs-toggle="modal" data-bs-target="#subModel2">
                                                         Upgrade
                                                     </button>
                                                     <button id="payButton" Style="display: none;">Pay</button>

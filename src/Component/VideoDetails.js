@@ -2,8 +2,9 @@ import { React } from 'react'
 // import { $ } from 'react-jquery-plugin'
 // import Category from './Category';
 import MobileSearch from './MobileSearch';
-import {useLocation} from "react-router-dom"
+import { useLocation } from "react-router-dom"
 // import $ from 'jquery';
+import MediaElement from './MediaElement';
 
 function VideoDetails(props) {
     const { searchOpen, expandNav } = props;
@@ -683,12 +684,18 @@ function VideoDetails(props) {
     //         });
 
     //     }, [])
+    const
+			sources = [
+				{src: 'https://clikview.com/upload/videos/2022/10/GbWKIPscyO2EARnf1KQE_17_fdf5e4954bf1ff3c4a2c3daa65f6590c_video_480p_converted.mp4', type: 'video/mp4'}
+			],
+			config = {},
+			tracks = {}
+		;
 
     return (
         <div className={expandNav ? "main-container shrinkWidth bodyfixed" : "main-container expandWidth"} Style="z-index:-1">
+                <div id="main-container" className="main-content  container-fluid container-full  ">
             {searchOpen ? <MobileSearch /> : ""}
-            <div className="yp_side_menu has_side_menu">
-                <div id="main-container" className="main-content  container container-full  ">
                     <div className="ads-placment" id="header_ad_"></div>
                     <div className="announcement-renderer">
 
@@ -698,12 +705,12 @@ function VideoDetails(props) {
                         <div className="top-video video-player-page six_padding_15" id="padding_15">
                             <div className="row" Style="position:relative;">
                                 <div className="row">
-                                    <div className="col-md-8 player-video yp_pub_elemnt ">
-                                        <div className="sticky-container__wrap sticky-container_in-content" Style="height: 526px;">
+                                    <div className="row player-video yp_pub_elemnt ">
+                                        <div className="sticky-container__wrap sticky-container_in-content col-xl-8" Style="height: 526px;">
                                             <div className="video-player pt_video_player  sticky-container__video" id="post_live_video_397">
-                                                <span className="mejs__offscreen">Video Player</span>
-                                                <div id="mep_0" className="mejs__container mejs__video" tabindex="0" role="application" aria-label="Video Player" Style="width: 934.263px; height: 525.523px; min-width: 359px;">
-                                                    <div className="mejs__inner"><div className="mejs__mediaelement">
+                                                {/* <span className="mejs__offscreen">Video Player</span>
+                                                <div id="mep_0" className="mejs__container mejs__video" tabindex="0" role="application" aria-label="Video Player" Style="width: 934.263px; height: 525.523px; min-width: 359px;"> */}
+                                                    {/* <div className="mejs__inner"><div className="mejs__mediaelement">
                                                         <mediaelementwrapper id="my-video">
                                                             <div id="my-video-iframe-overlay" className="mejs__iframe-overlay"></div>
                                                             <iframe id="my-video_youtube_iframe" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="Live in Costa Rica Interracial Couple 👩🏻‍🤝‍👨🏿 Retire n Relocate to CR Expat Interviews" src="https://www.youtube.com/embed/EpFiGT96ezM?controls=0&amp;rel=0&amp;disablekb=1&amp;showinfo=0&amp;modestbranding=0&amp;html5=1&amp;iv_load_policy=3&amp;autoplay=1&amp;end=0&amp;loop=0&amp;playsinline=1&amp;start=0&amp;nocookie=false&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fclikview.com&amp;widgetid=1" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox" width="934.263" height="525.5229375" Style="height: 100%;"></iframe><video id="my-video_from_mejs" Style="width: 100%; height: 100%; position: relative; display: none;" poster="https://i.ytimg.com/vi/EpFiGT96ezM/maxresdefault.jpg" autoplay="" playsinline="" preload="none" src="https://www.youtube.com/watch?v=EpFiGT96ezM">
@@ -771,976 +778,980 @@ function VideoDetails(props) {
                                                                     <style>
                                                                     </style>
                                                                     <use id="Background" href="#img1" x="7" y="2"></use>
-                                                                </svg></a></div></div></div>
-                                                <div className="icons hidde">
-                                                    <span className="expend-player">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                                            <path fill="currentColor" d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"></path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-
-                                            </div></div>
-                                        <div className="clear"></div>
-                                        <div className="clear"></div>
-                                        <div className="content pt_shadow">
-                                            <div className="video-title-detailPage pt_video_info">
-                                                <input type="hidden" value="397" id="video-id" />
-                                                <div className="video-big-title">
-                                                    <h1 itemprop="title">Live in Costa Rica 👩🏻‍🤝‍👨🏿 Retire n Relocate to CR Expat Interviews
-                                                    </h1>
-                                                </div>
-                                                <div className='videolikeandviews'>
-                                                    <div className="video-views">
-                                                        <span id="video-views-count">18</span>&nbsp;Views<span className="bold middot">·</span>
-                                                        <span title="Published on  08/23/22">08/23/22</span>
-                                                    </div>
-                                                    <div className="video-likes pull-right">
-                                                        <div className="like-btn " id="likes-bar" onclick="Wo_LikeSystem('397', 'like', this, 'is_ajax')" data-likes="3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="thumbs_up">
-                                                                <path fill="currentColor" d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z"></path>
+                                                                
+                                                                </svg></a></div></div></div> */}
+                                                    <MediaElement id="player1" mediaType="video" preload="none" controls width="640" height="360" poster="" sources={JSON.stringify(sources)} options={JSON.stringify(config)} tracks={JSON.stringify(tracks)}
+                                                    />
+                                                    <div className="icons hidde">
+                                                        <span className="expend-player">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z"></path>
                                                             </svg>
-                                                            <span className="likes" id="likes">3</span>
+                                                        </span>
+                                                    </div>
+
+                                                {/* </div> */}
+                                                </div>
+                                            <div className="clear"></div>
+                                            <div className="clear"></div>
+                                            <div className="content pt_shadow">
+                                                <div className="video-title-detailPage pt_video_info">
+                                                    <input type="hidden" value="397" id="video-id" />
+                                                    <div className="video-big-title">
+                                                        <h1 itemprop="title">Live in Costa Rica 👩🏻‍🤝‍👨🏿 Retire n Relocate to CR Expat Interviews
+                                                        </h1>
+                                                    </div>
+                                                    <div className='videolikeandviews'>
+                                                        <div className="video-views">
+                                                            <span id="video-views-count">18</span>&nbsp;Views<span className="bold middot">·</span>
+                                                            <span title="Published on  08/23/22">08/23/22</span>
                                                         </div>
-                                                        <div className="video-info-element pull-right">
-                                                            <div className="views-bar" Style="width: 0%"></div>
-                                                            <div className="views-bar blue" Style="width: 100%"></div>
+                                                        <div className="video-likes pull-right">
+                                                            <div className="like-btn " id="likes-bar" onclick="Wo_LikeSystem('397', 'like', this, 'is_ajax')" data-likes="3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="thumbs_up">
+                                                                    <path fill="currentColor" d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z"></path>
+                                                                </svg>
+                                                                <span className="likes" id="likes">3</span>
+                                                            </div>
+                                                            <div className="video-info-element pull-right">
+                                                                <div className="views-bar" Style="width: 0%"></div>
+                                                                <div className="views-bar blue" Style="width: 100%"></div>
+                                                                <div className="clear"></div>
+                                                            </div>
+                                                            <div className="like-btn text-right " id="dislikes-bar" onclick="Wo_LikeSystem('397', 'dislike', this, 'is_ajax')" data-likes="0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="thumbs_down">
+                                                                    <path fill="currentColor" d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm0 12l-4.34 4.34L12 14H3v-2l3-7h9v10zm4-12h4v12h-4z"></path>
+                                                                </svg>
+                                                                <span className="likes" id="dislikes">0</span>
+                                                            </div>
                                                             <div className="clear"></div>
                                                         </div>
-                                                        <div className="like-btn text-right " id="dislikes-bar" onclick="Wo_LikeSystem('397', 'dislike', this, 'is_ajax')" data-likes="0">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" className="thumbs_down">
-                                                                <path fill="currentColor" d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm0 12l-4.34 4.34L12 14H3v-2l3-7h9v10zm4-12h4v12h-4z"></path>
+                                                    </div>
+                                                    <div className="video-options">
+                                                        <button className="btn-share" data-toggle="modal" data-target="#share_box">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M21,11L14,4V8C7,9 4,14 3,19C5.5,15.5 9,13.9 14,13.9V18L21,11Z"></path>
                                                             </svg>
-                                                            <span className="likes" id="dislikes">0</span>
+                                                            Share
+                                                        </button>
+                                                        <button className="btn-share" data-toggle="modal" data-target="#embed_box">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"></path>
+                                                            </svg>
+                                                            Embed
+                                                        </button>
+                                                    </div>
+                                                    <div className="publisher-element publisher-element-videodetails">
+                                                        <div className="publisher-avatar pull-left hide-in-mobile-720">
+                                                            <a href="https://clikview.com/@Riles" data-load="?link1=timeline&amp;id=Riles"><img src="https://clikview.com/upload/photos/2022/08/7fSDOkhUu7MvTR4jJatt_22_9abd2bdd2690c5e1c2cbb95a0fda9e29_image.jpg" alt="Riley Jackson" /></a>
                                                         </div>
+                                                        <div className="publisher-name">
+                                                            <a href="https://clikview.com/@Riles" data-load="?link1=timeline&amp;id=Riles">Riley Jackson <i className="fa fa-check-circle fa-fw verified"></i></a><br />
+                                                            <span>33 Subscribers</span>
+                                                        </div>
+                                                        <div className="publisher-subscribe-button"><button className="btn-subscribe subscribe-id-830" data-id="830" onclick="PT_Subscribe(830, 'subscribe')">Subscribe</button><span className="subs-amount">33</span></div>
                                                         <div className="clear"></div>
                                                     </div>
-                                                </div>
-                                                <div className="video-options">
-                                                    <button className="btn-share" data-toggle="modal" data-target="#share_box">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                                            <path fill="currentColor" d="M21,11L14,4V8C7,9 4,14 3,19C5.5,15.5 9,13.9 14,13.9V18L21,11Z"></path>
+                                                    <div className="clear"></div>
+                                                    <div className="video-published">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                                            <path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z"></path>
                                                         </svg>
-                                                        Share
-                                                    </button>
-                                                    <button className="btn-share" data-toggle="modal" data-target="#embed_box">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                                            <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"></path>
-                                                        </svg>
-                                                        Embed
-                                                    </button>
+                                                        In
+                                                        <a href="https://clikview.com/videos/category/6" data-load="?link1=videos&amp;page=category&amp;id=6">Travel &amp; Events</a>                      </div>
+                                                    <div className="watch-video-description">
+                                                        <p dir="auto" itemprop="description">Riley and Tezzy have been living in Grecia Costa Rica for 2 1/2 years.  Riley from the United States and Tezzy from the Philippines. How did they pick Costa Rica? Have they been to Costa Rica before? Did they take a relocation (due diligence) tour? How does Costa Rican treat interracial couples? Are they living the Pura Vida, simple life? Has Riley taken on a new endeavor (we have a completely separate video about Riley's new venture... and boy, is it interesting and a great idea and offers some other talented folks some great opportunities **more later** Is Tezzy learning how to cook Costa Rican food? We will chat about many things in this video.  <br />  <br />Thank you for stopping by. Please Like, comment and subscribe.  Gracias.   <br />    <br />   <br />(ARTICLES COMING SOON!)</p>
+                                                    </div>
+                                                    <div className="watch-video-show-more desc">
+                                                        Show more
+                                                    </div>
+
+
                                                 </div>
-                                                <div className="publisher-element publisher-element-videodetails">
-                                                    <div className="publisher-avatar pull-left hide-in-mobile-720">
-                                                        <a href="https://clikview.com/@Riles" data-load="?link1=timeline&amp;id=Riles"><img src="https://clikview.com/upload/photos/2022/08/7fSDOkhUu7MvTR4jJatt_22_9abd2bdd2690c5e1c2cbb95a0fda9e29_image.jpg" alt="Riley Jackson" /></a>
+                                                <div className="ads-placment"></div>
+                                                <hr />
+                                                <div className="comments-content pt_video_comments">
+                                                    <div className="comments-header">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="21" height="21"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.8 19L14 22.5 11.2 19H6a1 1 0 0 1-1-1V7.103a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1h-5.2zM2 2h17v2H3v11H1V3a1 1 0 0 1 1-1z"></path></svg>&nbsp;0 Comments
+                                                        <span className="dropdown sort-comments-dropdown pull-right">
+                                                            <span className="dropdown-toggle pointer" type="button" data-toggle="dropdown">
+                                                                {/* <!--<i className="material-icons">sort</i>&nbsp;&nbsp;&nbsp;--> */}
+                                                                Sort By
+                                                            </span>
+                                                            <ul className="dropdown-menu">
+
+                                                                <li className="sort-comments" id="1">
+                                                                    <a href="/home2">Top Comments</a>
+                                                                </li>
+                                                                <li className="sort-comments" id="2">
+                                                                    <a href="/home2">Latest comments</a>
+                                                                </li>
+                                                            </ul>
+                                                        </span>
                                                     </div>
-                                                    <div className="publisher-name">
-                                                        <a href="https://clikview.com/@Riles" data-load="?link1=timeline&amp;id=Riles">Riley Jackson <i className="fa fa-check-circle fa-fw verified"></i></a><br />
-                                                        <span>33 Subscribers</span>
+                                                    <div className="w100 pt_blogcomm_combo yp_video_comment">
+                                                        <textarea name="comment" rows="1" className="form-control jTextarea" id="comment-textarea" placeholder="Write your comment.." Style="height: 40px;"></textarea>
+                                                        <button className="btn" onclick="PT_PostComment(this)">Publish&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" className="btn btn-main" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>
                                                     </div>
-                                                    <div className="publisher-subscribe-button"><button className="btn-subscribe subscribe-id-830" data-id="830" onclick="PT_Subscribe(830, 'subscribe')">Subscribe</button><span className="subs-amount">33</span></div>
+                                                    <br /><br />
+                                                    <div className="comment-button">
+                                                        <div className="user-comments" id="video-pinned-comments">
+                                                            <div id="pinned-comment">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="comments-loading hidden">
+                                                        <i className="fa fa-circle-o-notch spin"></i>
+                                                    </div>
+                                                    <div className="user-comments" id="video-user-comments">
+
+                                                    </div>
+
+                                                </div>
+                                                <input type="hidden" id="video-id" value="397" />
+
+
+
+
+                                                <form className="edit-comment-watch-form pt_wallet_forms hidden">
+                                                    <div className="form-group">
+                                                        <label>
+                                                            <span>Update Comment</span>
+                                                        </label>
+                                                    </div>
+                                                    <div className="form-group">
+                                                        <small></small>
+                                                        <input name="comment" type="text" value="" id="editComment" className="form-control" Style="font-size: 20px; height: 25px;padding-left: 10px;" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div Style=" background: #12141e; border-radius: 5px; padding: 10px; " className="pull-right desktop col-xl-4">
+                                            <div className="ads-placment"></div>
+                                            <div className="article-categories no-padding-both">
+                                                <div className="pt_categories">
+                                                    <ul>
+                                                        <li><a className="" href="https://clikview.com/videos/category/1" data-load="?link1=videos&amp;page=category&amp;id=1">Film &amp; Animation</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/3" data-load="?link1=videos&amp;page=category&amp;id=3">Business</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/4" data-load="?link1=videos&amp;page=category&amp;id=4">Pets &amp; Animals</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/5" data-load="?link1=videos&amp;page=category&amp;id=5">Sports</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/6" data-load="?link1=videos&amp;page=category&amp;id=6">Travel &amp; Events</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/7" data-load="?link1=videos&amp;page=category&amp;id=7">Motivation</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/8" data-load="?link1=videos&amp;page=category&amp;id=8">People &amp; Blogs</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/9" data-load="?link1=videos&amp;page=category&amp;id=9">Advanced Medicine</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/10" data-load="?link1=videos&amp;page=category&amp;id=10">Digital Marketing</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/11" data-load="?link1=videos&amp;page=category&amp;id=11">News &amp; Politics</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/12" data-load="?link1=videos&amp;page=category&amp;id=12">How-to &amp; Style</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/13" data-load="?link1=videos&amp;page=category&amp;id=13">Non-profits &amp; Activism</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/849" data-load="?link1=videos&amp;page=category&amp;id=849">Super Cars</a></li>
+                                                        <li><a className="" href="https://clikview.com/videos/category/other" data-load="?link1=videos&amp;page=category&amp;id=other">Other</a></li>
+                                                    </ul>
                                                     <div className="clear"></div>
                                                 </div>
-                                                <div className="clear"></div>
-                                                <div className="video-published">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                                                        <path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z"></path>
-                                                    </svg>
-                                                    In
-                                                    <a href="https://clikview.com/videos/category/6" data-load="?link1=videos&amp;page=category&amp;id=6">Travel &amp; Events</a>                      </div>
-                                                <div className="watch-video-description">
-                                                    <p dir="auto" itemprop="description">Riley and Tezzy have been living in Grecia Costa Rica for 2 1/2 years.  Riley from the United States and Tezzy from the Philippines. How did they pick Costa Rica? Have they been to Costa Rica before? Did they take a relocation (due diligence) tour? How does Costa Rican treat interracial couples? Are they living the Pura Vida, simple life? Has Riley taken on a new endeavor (we have a completely separate video about Riley's new venture... and boy, is it interesting and a great idea and offers some other talented folks some great opportunities **more later** Is Tezzy learning how to cook Costa Rican food? We will chat about many things in this video.  <br />  <br />Thank you for stopping by. Please Like, comment and subscribe.  Gracias.   <br />    <br />   <br />(ARTICLES COMING SOON!)</p>
-                                                </div>
-                                                <div className="watch-video-show-more desc">
-                                                    Show more
-                                                </div>
+
 
 
                                             </div>
-                                            <div className="ads-placment"></div>
-                                            <hr />
-                                            <div className="comments-content pt_video_comments">
-                                                <div className="comments-header">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="21" height="21"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.8 19L14 22.5 11.2 19H6a1 1 0 0 1-1-1V7.103a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1h-5.2zM2 2h17v2H3v11H1V3a1 1 0 0 1 1-1z"></path></svg>&nbsp;0 Comments
-                                                    <span className="dropdown sort-comments-dropdown pull-right">
-                                                        <span className="dropdown-toggle pointer" type="button" data-toggle="dropdown">
-                                                            {/* <!--<i className="material-icons">sort</i>&nbsp;&nbsp;&nbsp;--> */}
-                                                            Sort By
-                                                        </span>
-                                                        <ul className="dropdown-menu">
-
-                                                            <li className="sort-comments" id="1">
-                                                                <a href="/home2">Top Comments</a>
-                                                            </li>
-                                                            <li className="sort-comments" id="2">
-                                                                <a href="/home2">Latest comments</a>
-                                                            </li>
-                                                        </ul>
-                                                    </span>
+                                            <div className="next-video">
+                                                <div className="next-text pull-left">
+                                                    <h4>Up next</h4>
                                                 </div>
-                                                <div className="w100 pt_blogcomm_combo yp_video_comment">
-                                                    <textarea name="comment" rows="1" className="form-control jTextarea" id="comment-textarea" placeholder="Write your comment.." Style="height: 40px;"></textarea>
-                                                    <button className="btn" onclick="PT_PostComment(this)">Publish&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" className="btn btn-main" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>
+                                                <div className="pt_mn_wtch_switch pull-right">
+                                                    <input id="autoplay" type="checkbox" className="tgl autoplay-video" />
+                                                    <label className="tgl-btn" for="autoplay">Autoplay</label>
                                                 </div>
-                                                <br /><br />
-                                                <div className="comment-button">
-                                                    <div className="user-comments" id="video-pinned-comments">
-                                                        <div id="pinned-comment">
+                                                <div className="clear"></div>
+                                            </div>
+                                            <div className="videos-list" id="next-video">
+                                                <div className="related-video-wrapper" data-sidebar-video="157">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/c040364a83c3fc9fa7e604f5b41cfc8425b0c3f6LWETd4mhE7UWFRxntz4S.video_thumb_3785_11.jpeg" alt="Rescue Me Real Estate In Association with Miericoast Homes" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/rekSgB8FA3MfEVWWx4UV_20_2dd6d0ac637a69200d74f91e1946feb88341689b6d7669ede02c35307a659a_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
 
-                                                        </div>
+                                                            </div>
+                                                            <div className="video-duration">1:19</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3"> ⁣Rescue Me Real Estate In Association with Miericoast Homes</a></div>
+                                                        <div className="video-publisher">RescueMeRealEstate</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">35 Views <span className="middot">·</span> 08/20/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
                                                     </div>
                                                 </div>
-                                                <div className="comments-loading hidden">
-                                                    <i className="fa fa-circle-o-notch spin"></i>
-                                                </div>
-                                                <div className="user-comments" id="video-user-comments">
-
-                                                </div>
-
+                                                <hr />
                                             </div>
-                                            <input type="hidden" id="video-id" value="397" />
+                                            <div className="videos-list related-videos">
+                                                <div className="related-video-wrapper" data-sidebar-video="158">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/dda73efb8ae4a571d8bce34da24f7f6669f66552xB3hnsIPCrClwYTr8Gk3.video_thumb_2303_11.jpeg" alt="⁣Royal Life Residence - North Cyprus" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/jGzl6v5FU5P7oLYDOcFC_20_d4fe244fcd1d2c7c72834fe62ae9219687ea72862c178d92ea674c17a48256_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
 
+                                                            </div>
+                                                            <div className="video-duration">0:53</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W"> ⁣Royal Life Residence - North Cyprus</a></div>
+                                                        <div className="video-publisher">RescueMeRealEstate</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">32 Views <span className="middot">·</span> 08/20/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="161">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/9b12937807f4e80c1b2240b7c0206684619613f5YoPviymhXeeGx8SVc5ak.video_thumb_1431_39.jpeg" alt="⁣Royal Sun Elite - North Cyprus" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/A5q26V3rhx7iSPwtwgGP_20_4b2c564ae533eed517646f2c60c4a5517c4faaa80cab351051dcec4fd55dbd_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
 
+                                                            </div>
+                                                            <div className="video-duration">0:59</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b"> ⁣Royal Sun Elite - North Cyprus</a></div>
+                                                        <div className="video-publisher">RescueMeRealEstate</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">17 Views <span className="middot">·</span> 08/20/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="1001">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/gWRCECDqWIY/sddefault.jpg" alt="⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
 
-
-                                            <form className="edit-comment-watch-form pt_wallet_forms hidden">
-                                                <div className="form-group">
-                                                    <label>
-                                                        <span>Update Comment</span>
-                                                    </label>
+                                                            </div>
+                                                            <div className="video-duration">00:27:45</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4"> ⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="738">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/d021e5a2ee496c4ebb59d6f41c0b911e2b24abe5K168ryvsDjnETb4W3eXN.video_thumb_3250_11.jpeg" alt="⁣Macaws of Tortuguero" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/o9SqYZEJtd9XlzEUFfOY_28_91d755c609a09b8477720cb57841a29caad36b24e769ae9ef40d2cfc4ef988_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:20</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5"> ⁣Macaws of Tortuguero</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/28/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="322">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/43fa3424fbfc47f5292c5b2f5cf0a0598ac3c4b4Qq2uabOLafGvBpYa4v8H.video_thumb_8411_11.jpeg" alt="⁣Beautiful Costa Rica - Pura Vida" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/7dABj3nlHy2unZskELkN_22_2849804125b1e11e11b96ebc71c0629f7338891f609f2a5eda358aa1ce9335_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">6:43</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c"> ⁣Beautiful Costa Rica - Pura Vida</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/22/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="644">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/51e5e88e01ed5017ce6cafdefc688a9bceabc408iRgRoMY9rPavrqkeKLSf.video_thumb_4211_11.jpeg" alt="⁣4 Days in Tamarindo" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/3LMnk4xBgVYahRu9fvXw_26_379266fbf8e9471f7b5526100f0bc8e310bc8b3b34166d0269352ad06154a2_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:58</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq"> ⁣4 Days in Tamarindo</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/26/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="553">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/cb5d835bee89bf7bd5af8360f7ee53aa7f231963IKCJsOSB1IUu8foZIDJX.video_thumb_1189_11.jpeg" alt="⁣Costa Rica Through My Eyes - Uno" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/Lev5UXbXtcrpjP29z9DC_24_a2d3f7b18c391b6c87cd4ca424b134f3ecde9243f0a20e1d8187c45d4d2093_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:02</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T"> ⁣Costa Rica Through My Eyes - Uno</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/24/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="598">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/b3cf99eb34a76cdc002a543435798a74ad47bdd9CICzq58yiecf8VxXPkYo.video_thumb_9997_11.jpeg" alt="⁣Monkey Business in Manuel Antonio" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/dFmtlayRhvjZWsJykxsg_25_a4600d2c0debc89b6d597e1afc3c2fa2c0e63644c98865ebff867393b90ddb_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:53</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh"> ⁣Monkey Business in Manuel Antonio</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">7 Views <span className="middot">·</span> 08/25/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="634">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/c_W8d9_Biq4/maxresdefault.jpg" alt="⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:17:44</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv"> ⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/26/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="684">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/6b8b15f7245d65bac3df8ed7cae2c90d0dfcad04oeNLxCRxakVFKnB3g27e.video_thumb_7010_11.jpeg" alt="⁣Costa Rica Through My Eyes  - Dos" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/DcPNHPFMF4GhceT3UAhJ_27_e1576c1bace8b47653bdf29b06f09c01f115ea915b6a6ade9bd167ade3e061_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:31</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm"> ⁣Costa Rica Through My Eyes  - Dos</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">26 Views <span className="middot">·</span> 08/27/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="710">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/759444b2d891d7b400a533a37b07352f8d217b3dhd9zEsNltaabXyYYablA.video_thumb_8247_11.jpeg" alt="⁣Sunrise In Korea - A Timelapse Video." />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/HqdaV2CIlFIrphMyayJ7_27_e78a10bab21f372b25ee2fefd1d1c65cc236d87114bce6111b3a38f57d1c06_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:23</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n"> ⁣Sunrise In Korea - A Timelapse Video.</a></div>
+                                                        <div className="video-publisher">TAP18</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">25 Views <span className="middot">·</span> 08/27/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="714">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/6K5z3AtQiy8/maxresdefault.jpg" alt="⁣Roatan, Honduras" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:03:06</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt"> ⁣Roatan, Honduras</a></div>
+                                                        <div className="video-publisher">Enelisa</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/27/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="736">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/QP4urwn6hd0/maxresdefault.jpg" alt="⁣COSTA RICA’S  GOT TALENT!" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:03:23</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO"> ⁣COSTA RICA’S  GOT TALENT!</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">22 Views <span className="middot">·</span> 08/28/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="750">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/uMhwiao2dSU/maxresdefault.jpg" alt="⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:06:14</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj"> ⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">24 Views <span className="middot">·</span> 08/28/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="822">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/ikYUCdKhGxEtp7xWg7wP_29_64785becd829b20f176ddc1b27105780_image.jpeg" alt="⁣My Italian Summer" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/8JIwk4D5JnwuxfGPPUJh_29_b6eb60d369793da0cfed3ccd2edc47d1fd60f36d2deb97cf1f8fc11910e2d9_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">3:40</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD"> ⁣My Italian Summer</a></div>
+                                                        <div className="video-publisher">Liliana Cavaliere Hintz</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">16 Views <span className="middot">·</span> 08/29/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="889">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/gnVAR99w6NzvBf9OOPIR_30_346c3405242c056c5a831e6bc909fec2_image.png" alt="⁣Blaxit Radio an International Vibe!" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/1Yq6hPdrhXP2c1W2CYCs_30_e9230b132bcff0f860e50df36ae409fb8eb7c48f5befae2171f3a13a783457_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:26</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA"> ⁣Blaxit Radio an International Vibe!</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/30/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="890">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/6EJf6acFPZY/sddefault.jpg" alt="⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:07:23</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6"> ⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/30/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="1002">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/t7EFaJMdiLc/maxresdefault.jpg" alt="⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:15:24</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa"> ⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="1050">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/pOmMRL45azw/maxresdefault.jpg" alt="⁣La Terraza Guest House B&amp;B Grecia Costa Rica" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:02:28</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae"> ⁣La Terraza Guest House B&amp;B Grecia Costa Rica</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">12 Views <span className="middot">·</span> 09/01/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
                                                 </div>
-                                                <div className="form-group">
-                                                    <small></small>
-                                                    <input name="comment" type="text" value="" id="editComment" className="form-control" Style="font-size: 20px; height: 25px;padding-left: 10px;" />
-                                                </div>
-                                            </form>
+                                            </div>
+                                            <div className="load-related-videos">
+                                                <button className="btn btn-default" id="load-related-videos" Style="background: #12141e;">
+                                                    <span>Load more</span><i className="fa fa-circle-o-notch spin hidden"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div Style=" background: #12141e; border-radius: 5px; padding: 10px; " className="col-md-4 pull-right desktop">
-                                        <div className="ads-placment"></div>
-                                        <div className="article-categories no-padding-both">
-                                            <div className="pt_categories">
-                                                <ul>
-                                                    <li><a className="" href="https://clikview.com/videos/category/1" data-load="?link1=videos&amp;page=category&amp;id=1">Film &amp; Animation</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/3" data-load="?link1=videos&amp;page=category&amp;id=3">Business</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/4" data-load="?link1=videos&amp;page=category&amp;id=4">Pets &amp; Animals</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/5" data-load="?link1=videos&amp;page=category&amp;id=5">Sports</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/6" data-load="?link1=videos&amp;page=category&amp;id=6">Travel &amp; Events</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/7" data-load="?link1=videos&amp;page=category&amp;id=7">Motivation</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/8" data-load="?link1=videos&amp;page=category&amp;id=8">People &amp; Blogs</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/9" data-load="?link1=videos&amp;page=category&amp;id=9">Advanced Medicine</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/10" data-load="?link1=videos&amp;page=category&amp;id=10">Digital Marketing</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/11" data-load="?link1=videos&amp;page=category&amp;id=11">News &amp; Politics</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/12" data-load="?link1=videos&amp;page=category&amp;id=12">How-to &amp; Style</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/13" data-load="?link1=videos&amp;page=category&amp;id=13">Non-profits &amp; Activism</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/849" data-load="?link1=videos&amp;page=category&amp;id=849">Super Cars</a></li>
-                                                    <li><a className="" href="https://clikview.com/videos/category/other" data-load="?link1=videos&amp;page=category&amp;id=other">Other</a></li>
-                                                </ul>
+                                    <div className="col-md-8 ">
+
+                                    </div>
+                                    <div Style="display:none;" className="col-md-4 no-padding-left pull-right mobile">
+                                        <div className="content">
+                                            <div className="next-video">
+                                                <div className="next-text pull-left">
+                                                    <h4>Up next</h4>
+                                                </div>
+                                                <div className="pt_mn_wtch_switch pull-right">
+                                                    <input id="autoplay-2" type="checkbox" className="tgl autoplay-video" />
+                                                    <label className="tgl-btn" for="autoplay-2">Autoplay</label>
+                                                </div>
                                                 <div className="clear"></div>
                                             </div>
-
-
-
-                                        </div>
-                                        <div className="next-video">
-                                            <div className="next-text pull-left">
-                                                <h4>Up next</h4>
-                                            </div>
-                                            <div className="pt_mn_wtch_switch pull-right">
-                                                <input id="autoplay" type="checkbox" className="tgl autoplay-video" />
-                                                <label className="tgl-btn" for="autoplay">Autoplay</label>
-                                            </div>
-                                            <div className="clear"></div>
-                                        </div>
-                                        <div className="videos-list" id="next-video">
-                                            <div className="related-video-wrapper" data-sidebar-video="157">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/c040364a83c3fc9fa7e604f5b41cfc8425b0c3f6LWETd4mhE7UWFRxntz4S.video_thumb_3785_11.jpeg" alt="Rescue Me Real Estate In Association with Miericoast Homes" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/rekSgB8FA3MfEVWWx4UV_20_2dd6d0ac637a69200d74f91e1946feb88341689b6d7669ede02c35307a659a_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-
-                                                        </div>
-                                                        <div className="video-duration">1:19</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3"> ⁣Rescue Me Real Estate In Association with Miericoast Homes</a></div>
-                                                    <div className="video-publisher">RescueMeRealEstate</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">35 Views <span className="middot">·</span> 08/20/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                            <div className="videos-list" id="next-video">
+                                                <div className="related-video-wrapper" data-sidebar-video="157">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/c040364a83c3fc9fa7e604f5b41cfc8425b0c3f6LWETd4mhE7UWFRxntz4S.video_thumb_3785_11.jpeg" alt="⁣Rescue Me Real Estate In Association with Miericoast Homes" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/rekSgB8FA3MfEVWWx4UV_20_2dd6d0ac637a69200d74f91e1946feb88341689b6d7669ede02c35307a659a_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:19</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3"> ⁣Rescue Me Real Estate In Association with Miericoast Homes</a></div>
+                                                        <div className="video-publisher">RescueMeRealEstate</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">35 Views <span className="middot">·</span> 08/20/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <hr />
-                                        </div>
-                                        <div className="videos-list related-videos">
-                                            <div className="related-video-wrapper" data-sidebar-video="158">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/dda73efb8ae4a571d8bce34da24f7f6669f66552xB3hnsIPCrClwYTr8Gk3.video_thumb_2303_11.jpeg" alt="⁣Royal Life Residence - North Cyprus" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/jGzl6v5FU5P7oLYDOcFC_20_d4fe244fcd1d2c7c72834fe62ae9219687ea72862c178d92ea674c17a48256_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-
-                                                        </div>
-                                                        <div className="video-duration">0:53</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W"> ⁣Royal Life Residence - North Cyprus</a></div>
-                                                    <div className="video-publisher">RescueMeRealEstate</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">32 Views <span className="middot">·</span> 08/20/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="161">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/9b12937807f4e80c1b2240b7c0206684619613f5YoPviymhXeeGx8SVc5ak.video_thumb_1431_39.jpeg" alt="⁣Royal Sun Elite - North Cyprus" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/A5q26V3rhx7iSPwtwgGP_20_4b2c564ae533eed517646f2c60c4a5517c4faaa80cab351051dcec4fd55dbd_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-
-                                                        </div>
-                                                        <div className="video-duration">0:59</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b"> ⁣Royal Sun Elite - North Cyprus</a></div>
-                                                    <div className="video-publisher">RescueMeRealEstate</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">17 Views <span className="middot">·</span> 08/20/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="1001">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/gWRCECDqWIY/sddefault.jpg" alt="⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-
-                                                        </div>
-                                                        <div className="video-duration">00:27:45</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4"> ⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="738">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/d021e5a2ee496c4ebb59d6f41c0b911e2b24abe5K168ryvsDjnETb4W3eXN.video_thumb_3250_11.jpeg" alt="⁣Macaws of Tortuguero" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/o9SqYZEJtd9XlzEUFfOY_28_91d755c609a09b8477720cb57841a29caad36b24e769ae9ef40d2cfc4ef988_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:20</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5"> ⁣Macaws of Tortuguero</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/28/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="322">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/43fa3424fbfc47f5292c5b2f5cf0a0598ac3c4b4Qq2uabOLafGvBpYa4v8H.video_thumb_8411_11.jpeg" alt="⁣Beautiful Costa Rica - Pura Vida" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/7dABj3nlHy2unZskELkN_22_2849804125b1e11e11b96ebc71c0629f7338891f609f2a5eda358aa1ce9335_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">6:43</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c"> ⁣Beautiful Costa Rica - Pura Vida</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/22/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="644">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/51e5e88e01ed5017ce6cafdefc688a9bceabc408iRgRoMY9rPavrqkeKLSf.video_thumb_4211_11.jpeg" alt="⁣4 Days in Tamarindo" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/3LMnk4xBgVYahRu9fvXw_26_379266fbf8e9471f7b5526100f0bc8e310bc8b3b34166d0269352ad06154a2_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:58</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq"> ⁣4 Days in Tamarindo</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/26/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="553">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/cb5d835bee89bf7bd5af8360f7ee53aa7f231963IKCJsOSB1IUu8foZIDJX.video_thumb_1189_11.jpeg" alt="⁣Costa Rica Through My Eyes - Uno" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/Lev5UXbXtcrpjP29z9DC_24_a2d3f7b18c391b6c87cd4ca424b134f3ecde9243f0a20e1d8187c45d4d2093_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:02</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T"> ⁣Costa Rica Through My Eyes - Uno</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/24/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="598">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/b3cf99eb34a76cdc002a543435798a74ad47bdd9CICzq58yiecf8VxXPkYo.video_thumb_9997_11.jpeg" alt="⁣Monkey Business in Manuel Antonio" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/dFmtlayRhvjZWsJykxsg_25_a4600d2c0debc89b6d597e1afc3c2fa2c0e63644c98865ebff867393b90ddb_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:53</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh"> ⁣Monkey Business in Manuel Antonio</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">7 Views <span className="middot">·</span> 08/25/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="634">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/c_W8d9_Biq4/maxresdefault.jpg" alt="⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:17:44</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv"> ⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/26/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="684">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/6b8b15f7245d65bac3df8ed7cae2c90d0dfcad04oeNLxCRxakVFKnB3g27e.video_thumb_7010_11.jpeg" alt="⁣Costa Rica Through My Eyes  - Dos" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/DcPNHPFMF4GhceT3UAhJ_27_e1576c1bace8b47653bdf29b06f09c01f115ea915b6a6ade9bd167ade3e061_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:31</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm"> ⁣Costa Rica Through My Eyes  - Dos</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">26 Views <span className="middot">·</span> 08/27/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="710">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/759444b2d891d7b400a533a37b07352f8d217b3dhd9zEsNltaabXyYYablA.video_thumb_8247_11.jpeg" alt="⁣Sunrise In Korea - A Timelapse Video." />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/HqdaV2CIlFIrphMyayJ7_27_e78a10bab21f372b25ee2fefd1d1c65cc236d87114bce6111b3a38f57d1c06_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:23</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n"> ⁣Sunrise In Korea - A Timelapse Video.</a></div>
-                                                    <div className="video-publisher">TAP18</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">25 Views <span className="middot">·</span> 08/27/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="714">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/6K5z3AtQiy8/maxresdefault.jpg" alt="⁣Roatan, Honduras" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:03:06</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt"> ⁣Roatan, Honduras</a></div>
-                                                    <div className="video-publisher">Enelisa</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/27/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="736">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/QP4urwn6hd0/maxresdefault.jpg" alt="⁣COSTA RICA’S  GOT TALENT!" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:03:23</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO"> ⁣COSTA RICA’S  GOT TALENT!</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">22 Views <span className="middot">·</span> 08/28/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="750">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/uMhwiao2dSU/maxresdefault.jpg" alt="⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:06:14</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj"> ⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">24 Views <span className="middot">·</span> 08/28/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="822">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/ikYUCdKhGxEtp7xWg7wP_29_64785becd829b20f176ddc1b27105780_image.jpeg" alt="⁣My Italian Summer" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/8JIwk4D5JnwuxfGPPUJh_29_b6eb60d369793da0cfed3ccd2edc47d1fd60f36d2deb97cf1f8fc11910e2d9_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">3:40</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD"> ⁣My Italian Summer</a></div>
-                                                    <div className="video-publisher">Liliana Cavaliere Hintz</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">16 Views <span className="middot">·</span> 08/29/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="889">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/gnVAR99w6NzvBf9OOPIR_30_346c3405242c056c5a831e6bc909fec2_image.png" alt="⁣Blaxit Radio an International Vibe!" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/1Yq6hPdrhXP2c1W2CYCs_30_e9230b132bcff0f860e50df36ae409fb8eb7c48f5befae2171f3a13a783457_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:26</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA"> ⁣Blaxit Radio an International Vibe!</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/30/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="890">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/6EJf6acFPZY/sddefault.jpg" alt="⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:07:23</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6"> ⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/30/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="1002">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/t7EFaJMdiLc/maxresdefault.jpg" alt="⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:15:24</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa"> ⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="1050">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/pOmMRL45azw/maxresdefault.jpg" alt="⁣La Terraza Guest House B&amp;B Grecia Costa Rica" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:02:28</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae"> ⁣La Terraza Guest House B&amp;B Grecia Costa Rica</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">12 Views <span className="middot">·</span> 09/01/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
+                                            <br />
+                                            <div className="related-header">
                                             </div>
-                                        </div>
-                                        <div className="load-related-videos">
-                                            <button className="btn btn-default" id="load-related-videos" Style="background: #12141e;">
-                                                <span>Load more</span><i className="fa fa-circle-o-notch spin hidden"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-8 ">
-
-                                </div>
-                                <div Style="display:none;" className="col-md-4 no-padding-left pull-right mobile">
-                                    <div className="content">
-                                        <div className="next-video">
-                                            <div className="next-text pull-left">
-                                                <h4>Up next</h4>
-                                            </div>
-                                            <div className="pt_mn_wtch_switch pull-right">
-                                                <input id="autoplay-2" type="checkbox" className="tgl autoplay-video" />
-                                                <label className="tgl-btn" for="autoplay-2">Autoplay</label>
-                                            </div>
-                                            <div className="clear"></div>
-                                        </div>
-                                        <div className="videos-list" id="next-video">
-                                            <div className="related-video-wrapper" data-sidebar-video="157">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/c040364a83c3fc9fa7e604f5b41cfc8425b0c3f6LWETd4mhE7UWFRxntz4S.video_thumb_3785_11.jpeg" alt="⁣Rescue Me Real Estate In Association with Miericoast Homes" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/rekSgB8FA3MfEVWWx4UV_20_2dd6d0ac637a69200d74f91e1946feb88341689b6d7669ede02c35307a659a_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:19</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/rescue-me-real-estate-in-association-with-miericoast-homes_QPPvtEy8qZLC4T3.html" data-load="?link1=watch&amp;id=QPPvtEy8qZLC4T3"> ⁣Rescue Me Real Estate In Association with Miericoast Homes</a></div>
-                                                    <div className="video-publisher">RescueMeRealEstate</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">35 Views <span className="middot">·</span> 08/20/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br />
-                                        <div className="related-header">
-                                        </div>
-                                        <div className="videos-list related-videos">
-                                            <div className="related-video-wrapper" data-sidebar-video="158">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/dda73efb8ae4a571d8bce34da24f7f6669f66552xB3hnsIPCrClwYTr8Gk3.video_thumb_2303_11.jpeg" alt="⁣Royal Life Residence - North Cyprus" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/jGzl6v5FU5P7oLYDOcFC_20_d4fe244fcd1d2c7c72834fe62ae9219687ea72862c178d92ea674c17a48256_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:53</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W"> ⁣Royal Life Residence - North Cyprus</a></div>
-                                                    <div className="video-publisher">RescueMeRealEstate</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">32 Views <span className="middot">·</span> 08/20/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="161">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/9b12937807f4e80c1b2240b7c0206684619613f5YoPviymhXeeGx8SVc5ak.video_thumb_1431_39.jpeg" alt="⁣Royal Sun Elite - North Cyprus" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/A5q26V3rhx7iSPwtwgGP_20_4b2c564ae533eed517646f2c60c4a5517c4faaa80cab351051dcec4fd55dbd_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:59</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b"> ⁣Royal Sun Elite - North Cyprus</a></div>
-                                                    <div className="video-publisher">RescueMeRealEstate</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">17 Views <span className="middot">·</span> 08/20/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="1001">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/gWRCECDqWIY/sddefault.jpg" alt="⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:27:45</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4"> ⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="738">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/d021e5a2ee496c4ebb59d6f41c0b911e2b24abe5K168ryvsDjnETb4W3eXN.video_thumb_3250_11.jpeg" alt="⁣Macaws of Tortuguero" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/o9SqYZEJtd9XlzEUFfOY_28_91d755c609a09b8477720cb57841a29caad36b24e769ae9ef40d2cfc4ef988_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:20</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5"> ⁣Macaws of Tortuguero</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/28/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="322">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/43fa3424fbfc47f5292c5b2f5cf0a0598ac3c4b4Qq2uabOLafGvBpYa4v8H.video_thumb_8411_11.jpeg" alt="⁣Beautiful Costa Rica - Pura Vida" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/7dABj3nlHy2unZskELkN_22_2849804125b1e11e11b96ebc71c0629f7338891f609f2a5eda358aa1ce9335_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">6:43</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c"> ⁣Beautiful Costa Rica - Pura Vida</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/22/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="644">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/51e5e88e01ed5017ce6cafdefc688a9bceabc408iRgRoMY9rPavrqkeKLSf.video_thumb_4211_11.jpeg" alt="⁣4 Days in Tamarindo" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/3LMnk4xBgVYahRu9fvXw_26_379266fbf8e9471f7b5526100f0bc8e310bc8b3b34166d0269352ad06154a2_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:58</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq"> ⁣4 Days in Tamarindo</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/26/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="553">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/cb5d835bee89bf7bd5af8360f7ee53aa7f231963IKCJsOSB1IUu8foZIDJX.video_thumb_1189_11.jpeg" alt="⁣Costa Rica Through My Eyes - Uno" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/Lev5UXbXtcrpjP29z9DC_24_a2d3f7b18c391b6c87cd4ca424b134f3ecde9243f0a20e1d8187c45d4d2093_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:02</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T"> ⁣Costa Rica Through My Eyes - Uno</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/24/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="598">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/b3cf99eb34a76cdc002a543435798a74ad47bdd9CICzq58yiecf8VxXPkYo.video_thumb_9997_11.jpeg" alt="⁣Monkey Business in Manuel Antonio" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/dFmtlayRhvjZWsJykxsg_25_a4600d2c0debc89b6d597e1afc3c2fa2c0e63644c98865ebff867393b90ddb_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:53</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh"> ⁣Monkey Business in Manuel Antonio</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">7 Views <span className="middot">·</span> 08/25/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="634">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/c_W8d9_Biq4/maxresdefault.jpg" alt="⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:17:44</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv"> ⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/26/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="684">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/6b8b15f7245d65bac3df8ed7cae2c90d0dfcad04oeNLxCRxakVFKnB3g27e.video_thumb_7010_11.jpeg" alt="⁣Costa Rica Through My Eyes  - Dos" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/DcPNHPFMF4GhceT3UAhJ_27_e1576c1bace8b47653bdf29b06f09c01f115ea915b6a6ade9bd167ade3e061_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:31</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm"> ⁣Costa Rica Through My Eyes  - Dos</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">26 Views <span className="middot">·</span> 08/27/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="710">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/759444b2d891d7b400a533a37b07352f8d217b3dhd9zEsNltaabXyYYablA.video_thumb_8247_11.jpeg" alt="⁣Sunrise In Korea - A Timelapse Video." />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/HqdaV2CIlFIrphMyayJ7_27_e78a10bab21f372b25ee2fefd1d1c65cc236d87114bce6111b3a38f57d1c06_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">0:23</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n"> ⁣Sunrise In Korea - A Timelapse Video.</a></div>
-                                                    <div className="video-publisher">TAP18</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">25 Views <span className="middot">·</span> 08/27/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="714">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/6K5z3AtQiy8/maxresdefault.jpg" alt="⁣Roatan, Honduras" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:03:06</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt"> ⁣Roatan, Honduras</a></div>
-                                                    <div className="video-publisher">Enelisa</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/27/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="736">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/QP4urwn6hd0/maxresdefault.jpg" alt="⁣COSTA RICA’S  GOT TALENT!" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:03:23</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO"> ⁣COSTA RICA’S  GOT TALENT!</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">22 Views <span className="middot">·</span> 08/28/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="750">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/uMhwiao2dSU/maxresdefault.jpg" alt="⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:06:14</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj"> ⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">24 Views <span className="middot">·</span> 08/28/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="822">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/ikYUCdKhGxEtp7xWg7wP_29_64785becd829b20f176ddc1b27105780_image.jpeg" alt="⁣My Italian Summer" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/8JIwk4D5JnwuxfGPPUJh_29_b6eb60d369793da0cfed3ccd2edc47d1fd60f36d2deb97cf1f8fc11910e2d9_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">3:40</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD"> ⁣My Italian Summer</a></div>
-                                                    <div className="video-publisher">Liliana Cavaliere Hintz</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">16 Views <span className="middot">·</span> 08/29/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="889">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://clikview.com/upload/photos/2022/08/gnVAR99w6NzvBf9OOPIR_30_346c3405242c056c5a831e6bc909fec2_image.png" alt="⁣Blaxit Radio an International Vibe!" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/1Yq6hPdrhXP2c1W2CYCs_30_e9230b132bcff0f860e50df36ae409fb8eb7c48f5befae2171f3a13a783457_small_video_.gif')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">1:26</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA"> ⁣Blaxit Radio an International Vibe!</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/30/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="890">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/6EJf6acFPZY/sddefault.jpg" alt="⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:07:23</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6"> ⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/30/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="1002">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/t7EFaJMdiLc/maxresdefault.jpg" alt="⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:15:24</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa"> ⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
-                                                </div>
-                                            </div><div className="related-video-wrapper" data-sidebar-video="1050">
-                                                <div className="ra-thumb">
-                                                    <a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae" Style=" border-radius: 10px; overflow: hidden; ">
-                                                        <img src="https://i.ytimg.com/vi/pOmMRL45azw/maxresdefault.jpg" alt="⁣La Terraza Guest House B&amp;B Grecia Costa Rica" />
-                                                        <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                                                            {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
-                                                        </div>
-                                                        <div className="video-duration">00:02:28</div>
-                                                    </a>
-                                                </div>
-                                                <div className="ra-title">
-                                                    <div className="video-title-detailPage"><a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae"> ⁣La Terraza Guest House B&amp;B Grecia Costa Rica</a></div>
-                                                    <div className="video-publisher">Riley Jackson</div>
-                                                    <div className="video-publisher" Style="font-size:12px;">12 Views <span className="middot">·</span> 09/01/22</div>
-                                                    <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                            <div className="videos-list related-videos">
+                                                <div className="related-video-wrapper" data-sidebar-video="158">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/dda73efb8ae4a571d8bce34da24f7f6669f66552xB3hnsIPCrClwYTr8Gk3.video_thumb_2303_11.jpeg" alt="⁣Royal Life Residence - North Cyprus" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/jGzl6v5FU5P7oLYDOcFC_20_d4fe244fcd1d2c7c72834fe62ae9219687ea72862c178d92ea674c17a48256_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:53</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-life-residence-north-cyprus_tftP6BWbrOxsR9W.html" data-load="?link1=watch&amp;id=tftP6BWbrOxsR9W"> ⁣Royal Life Residence - North Cyprus</a></div>
+                                                        <div className="video-publisher">RescueMeRealEstate</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">32 Views <span className="middot">·</span> 08/20/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="161">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/9b12937807f4e80c1b2240b7c0206684619613f5YoPviymhXeeGx8SVc5ak.video_thumb_1431_39.jpeg" alt="⁣Royal Sun Elite - North Cyprus" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/A5q26V3rhx7iSPwtwgGP_20_4b2c564ae533eed517646f2c60c4a5517c4faaa80cab351051dcec4fd55dbd_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:59</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/royal-sun-elite-north-cyprus_iA41aCob3ppeE5b.html" data-load="?link1=watch&amp;id=iA41aCob3ppeE5b"> ⁣Royal Sun Elite - North Cyprus</a></div>
+                                                        <div className="video-publisher">RescueMeRealEstate</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">17 Views <span className="middot">·</span> 08/20/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="1001">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/gWRCECDqWIY/sddefault.jpg" alt="⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:27:45</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/sexy-single-girl-traveling-costa-rica-she-has-something-to-say_7yHZ93eAYSjPCw4.html" data-load="?link1=watch&amp;id=7yHZ93eAYSjPCw4"> ⁣Sexy, Single Girl Traveling Costa Rica 🧘 She Has Something to Say</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="738">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/d021e5a2ee496c4ebb59d6f41c0b911e2b24abe5K168ryvsDjnETb4W3eXN.video_thumb_3250_11.jpeg" alt="⁣Macaws of Tortuguero" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/o9SqYZEJtd9XlzEUFfOY_28_91d755c609a09b8477720cb57841a29caad36b24e769ae9ef40d2cfc4ef988_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:20</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/macaws-of-tortuguero_IKqZN14rptN72d5.html" data-load="?link1=watch&amp;id=IKqZN14rptN72d5"> ⁣Macaws of Tortuguero</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/28/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="322">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/43fa3424fbfc47f5292c5b2f5cf0a0598ac3c4b4Qq2uabOLafGvBpYa4v8H.video_thumb_8411_11.jpeg" alt="⁣Beautiful Costa Rica - Pura Vida" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/7dABj3nlHy2unZskELkN_22_2849804125b1e11e11b96ebc71c0629f7338891f609f2a5eda358aa1ce9335_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">6:43</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/beautiful-costa-rica-pura-vida_nRKDASNtaqbx93c.html" data-load="?link1=watch&amp;id=nRKDASNtaqbx93c"> ⁣Beautiful Costa Rica - Pura Vida</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/22/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="644">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/51e5e88e01ed5017ce6cafdefc688a9bceabc408iRgRoMY9rPavrqkeKLSf.video_thumb_4211_11.jpeg" alt="⁣4 Days in Tamarindo" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/3LMnk4xBgVYahRu9fvXw_26_379266fbf8e9471f7b5526100f0bc8e310bc8b3b34166d0269352ad06154a2_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:58</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/4-days-in-tamarindo_nqWa49H43M8yAXq.html" data-load="?link1=watch&amp;id=nqWa49H43M8yAXq"> ⁣4 Days in Tamarindo</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/26/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="553">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/cb5d835bee89bf7bd5af8360f7ee53aa7f231963IKCJsOSB1IUu8foZIDJX.video_thumb_1189_11.jpeg" alt="⁣Costa Rica Through My Eyes - Uno" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/Lev5UXbXtcrpjP29z9DC_24_a2d3f7b18c391b6c87cd4ca424b134f3ecde9243f0a20e1d8187c45d4d2093_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:02</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-uno_d98qftoomTkLy3T.html" data-load="?link1=watch&amp;id=d98qftoomTkLy3T"> ⁣Costa Rica Through My Eyes - Uno</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/24/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="598">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/b3cf99eb34a76cdc002a543435798a74ad47bdd9CICzq58yiecf8VxXPkYo.video_thumb_9997_11.jpeg" alt="⁣Monkey Business in Manuel Antonio" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/dFmtlayRhvjZWsJykxsg_25_a4600d2c0debc89b6d597e1afc3c2fa2c0e63644c98865ebff867393b90ddb_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:53</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/monkey-business-in-manuel-antonio_JPYwaEemnjD8Yfh.html" data-load="?link1=watch&amp;id=JPYwaEemnjD8Yfh"> ⁣Monkey Business in Manuel Antonio</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">7 Views <span className="middot">·</span> 08/25/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="634">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/c_W8d9_Biq4/maxresdefault.jpg" alt="⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:17:44</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-a-new-radio-station-blaxit-radio-talk-music_3XcjeQ2zcFMKJlv.html" data-load="?link1=watch&amp;id=3XcjeQ2zcFMKJlv"> ⁣Costa Rica - A New Radio Station 📻 Blaxit Radio🎙Talk 🎺 Music</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">9 Views <span className="middot">·</span> 08/26/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="684">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/6b8b15f7245d65bac3df8ed7cae2c90d0dfcad04oeNLxCRxakVFKnB3g27e.video_thumb_7010_11.jpeg" alt="⁣Costa Rica Through My Eyes  - Dos" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/DcPNHPFMF4GhceT3UAhJ_27_e1576c1bace8b47653bdf29b06f09c01f115ea915b6a6ade9bd167ade3e061_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:31</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-through-my-eyes-dos_a372Iq8OxG6zlJm.html" data-load="?link1=watch&amp;id=a372Iq8OxG6zlJm"> ⁣Costa Rica Through My Eyes  - Dos</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">26 Views <span className="middot">·</span> 08/27/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="710">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/759444b2d891d7b400a533a37b07352f8d217b3dhd9zEsNltaabXyYYablA.video_thumb_8247_11.jpeg" alt="⁣Sunrise In Korea - A Timelapse Video." />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/HqdaV2CIlFIrphMyayJ7_27_e78a10bab21f372b25ee2fefd1d1c65cc236d87114bce6111b3a38f57d1c06_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">0:23</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/sunrise-in-korea-a-timelapse-video_5CzSc74n19Kif9n.html" data-load="?link1=watch&amp;id=5CzSc74n19Kif9n"> ⁣Sunrise In Korea - A Timelapse Video.</a></div>
+                                                        <div className="video-publisher">TAP18</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">25 Views <span className="middot">·</span> 08/27/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="714">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/6K5z3AtQiy8/maxresdefault.jpg" alt="⁣Roatan, Honduras" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:03:06</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/roatan-honduras_qiiCXq1ZVh8otHt.html" data-load="?link1=watch&amp;id=qiiCXq1ZVh8otHt"> ⁣Roatan, Honduras</a></div>
+                                                        <div className="video-publisher">Enelisa</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">28 Views <span className="middot">·</span> 08/27/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="736">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/QP4urwn6hd0/maxresdefault.jpg" alt="⁣COSTA RICA’S  GOT TALENT!" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:03:23</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/costa-rica-s-got-talent_ZjCoGGsc9YokQFO.html" data-load="?link1=watch&amp;id=ZjCoGGsc9YokQFO"> ⁣COSTA RICA’S  GOT TALENT!</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">22 Views <span className="middot">·</span> 08/28/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="750">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/uMhwiao2dSU/maxresdefault.jpg" alt="⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:06:14</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/own-a-beachfront-condo-today-2-bed-2-bath-in-playa-potrero-costa-rica_zYskyQtimylAABj.html" data-load="?link1=watch&amp;id=zYskyQtimylAABj"> ⁣Own a Beachfront Condo Today | 2 Bed 2 Bath in Playa Potrero Costa Rica</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">24 Views <span className="middot">·</span> 08/28/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="822">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/ikYUCdKhGxEtp7xWg7wP_29_64785becd829b20f176ddc1b27105780_image.jpeg" alt="⁣My Italian Summer" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/8JIwk4D5JnwuxfGPPUJh_29_b6eb60d369793da0cfed3ccd2edc47d1fd60f36d2deb97cf1f8fc11910e2d9_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">3:40</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/my-italian-summer_B2vLGdJ7qdnkUJD.html" data-load="?link1=watch&amp;id=B2vLGdJ7qdnkUJD"> ⁣My Italian Summer</a></div>
+                                                        <div className="video-publisher">Liliana Cavaliere Hintz</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">16 Views <span className="middot">·</span> 08/29/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="889">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://clikview.com/upload/photos/2022/08/gnVAR99w6NzvBf9OOPIR_30_346c3405242c056c5a831e6bc909fec2_image.png" alt="⁣Blaxit Radio an International Vibe!" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'https://clikview.com/upload/videos/2022/08/1Yq6hPdrhXP2c1W2CYCs_30_e9230b132bcff0f860e50df36ae409fb8eb7c48f5befae2171f3a13a783457_small_video_.gif')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">1:26</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/blaxit-radio-a-international-vibe_kPv3WpghJiKD3JA.html" data-load="?link1=watch&amp;id=kPv3WpghJiKD3JA"> ⁣Blaxit Radio an International Vibe!</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">8 Views <span className="middot">·</span> 08/30/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="890">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/6EJf6acFPZY/sddefault.jpg" alt="⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:07:23</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/luxury-modern-beachfront-home-in-playa-flamingo-costa-rica_3ypMgoVAbbUMpQ6.html" data-load="?link1=watch&amp;id=3ypMgoVAbbUMpQ6"> ⁣Luxury Modern Beachfront Home in Playa Flamingo, Costa Rica!</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">18 Views <span className="middot">·</span> 08/30/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="1002">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/t7EFaJMdiLc/maxresdefault.jpg" alt="⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:15:24</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/las-catalinas-costa-rica-a-walk-through-our-car-free-town_oKzSBUOuXFyAaJa.html" data-load="?link1=watch&amp;id=oKzSBUOuXFyAaJa"> ⁣Las Catalinas, Costa Rica | A Walk Through our Car-Free Town</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">10 Views <span className="middot">·</span> 08/31/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
+                                                </div><div className="related-video-wrapper" data-sidebar-video="1050">
+                                                    <div className="ra-thumb">
+                                                        <a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae" Style=" border-radius: 10px; overflow: hidden; ">
+                                                            <img src="https://i.ytimg.com/vi/pOmMRL45azw/maxresdefault.jpg" alt="⁣La Terraza Guest House B&amp;B Grecia Costa Rica" />
+                                                            <div className="play_hover_btn" onmouseenter="show_gif(this,'')" onmouseleave="hide_gif(this)">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                                                {/* <!--<svg xmlns="http://www.w3.org/2000/svg" className="feather" width="24" height="24" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.8)"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>--> */}
+                                                            </div>
+                                                            <div className="video-duration">00:02:28</div>
+                                                        </a>
+                                                    </div>
+                                                    <div className="ra-title">
+                                                        <div className="video-title-detailPage"><a href="https://clikview.com/watch/la-terraza-guest-house-b-amp-b-grecia-costa-rica_pfbsPRkDRlL9zae.html" data-load="?link1=watch&amp;id=pfbsPRkDRlL9zae"> ⁣La Terraza Guest House B&amp;B Grecia Costa Rica</a></div>
+                                                        <div className="video-publisher">Riley Jackson</div>
+                                                        <div className="video-publisher" Style="font-size:12px;">12 Views <span className="middot">·</span> 09/01/22</div>
+                                                        <div className="video-category"><a href="https://clikview.com/videos/category/6">Travel &amp; Events</a></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="clear"></div>
                                 </div>
-                                <div className="clear"></div>
                             </div>
-                        </div>
-                        <div className="modal fade matdialog" id="share_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div className="modal-dialog modal-sm" role="document">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h4 className="modal-title" id="myModalLabel">Share</h4>
-                                    </div>
-                                    <div className="modal-body">
-                                        <div className="yp_copy_link">
-                                            <input id="copyLink" readonly="" tabindex="1" type="text" value="https://clikview.com/v/Lx2euv" />
-                                            <button className="btn" onclick="copyLinkfn();">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                                    <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path>
-                                                </svg>
-                                            </button>
+                            <div className="modal fade matdialog" id="share_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div className="modal-dialog modal-sm" role="document">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h4 className="modal-title" id="myModalLabel">Share</h4>
                                         </div>
-                                        <div className="share-video">
-                                            <div><a href="/hone2" className="fa fa-facebook" onclick="OpenShareWindow('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
-                                            <div><a href="/hone2" className="fa fa-twitter" onclick="OpenShareWindow('https://twitter.com/intent/tweet?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
-                                            <div><a href="/hone2" className="fa fa-google" onclick="OpenShareWindow('https://plus.google.com/share?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
-                                            <div><a href="/hone2" className="fa fa-linkedin" onclick="OpenShareWindow('https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html&amp;title=Live in Costa Rica 👩🏻‍🤝‍👨🏿 Retire n Relocate to CR Expat Interviews')"><span></span></a></div>
-                                            <div><a href="/hone2" className="fa fa-pinterest" onclick="OpenShareWindow('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html&amp;media=https://i.ytimg.com/vi/EpFiGT96ezM/maxresdefault.jpg')"><span></span></a></div>
-                                            {/* <!--<div><a href="#" className="fa fa-tumblr" onclick="OpenShareWindow('http://www.tumblr.com/share/link?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"></a></div>--> */}
-                                            <div><a href="/hone2" className="fa fa-reddit" onclick="OpenShareWindow('http://www.reddit.com/submit?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
+                                        <div className="modal-body">
+                                            <div className="yp_copy_link">
+                                                <input id="copyLink" readonly="" tabindex="1" type="text" value="https://clikview.com/v/Lx2euv" />
+                                                <button className="btn" onclick="copyLinkfn();">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div className="share-video">
+                                                <div><a href="/hone2" className="fa fa-facebook" onclick="OpenShareWindow('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
+                                                <div><a href="/hone2" className="fa fa-twitter" onclick="OpenShareWindow('https://twitter.com/intent/tweet?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
+                                                <div><a href="/hone2" className="fa fa-google" onclick="OpenShareWindow('https://plus.google.com/share?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
+                                                <div><a href="/hone2" className="fa fa-linkedin" onclick="OpenShareWindow('https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html&amp;title=Live in Costa Rica 👩🏻‍🤝‍👨🏿 Retire n Relocate to CR Expat Interviews')"><span></span></a></div>
+                                                <div><a href="/hone2" className="fa fa-pinterest" onclick="OpenShareWindow('https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html&amp;media=https://i.ytimg.com/vi/EpFiGT96ezM/maxresdefault.jpg')"><span></span></a></div>
+                                                {/* <!--<div><a href="#" className="fa fa-tumblr" onclick="OpenShareWindow('http://www.tumblr.com/share/link?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"></a></div>--> */}
+                                                <div><a href="/hone2" className="fa fa-reddit" onclick="OpenShareWindow('http://www.reddit.com/submit?url=https%3A%2F%2Fclikview.com%2Fwatch%2Flive-in-costa-rica-retire-n-relocate-to-cr-expat-interviews_C6I4dsl3UGZ8cHj.html')"><span></span></a></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" className="matbtn btn btn-default" data-dismiss="modal">Close</button>
+                                        <div className="modal-footer">
+                                            <button type="button" className="matbtn btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="modal fade matdialog" id="embed_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div className="modal-dialog modal-md" role="document">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h4 className="modal-title" id="myModalLabel">Embed</h4>
-                                    </div>
-                                    <div className="modal-body">
-                                        <div className="embed-placement">
-                                            <input type="text" name="embed" id="embed" className="form-control" onclick="this.select()" value="<iframe src=&quot;https://clikview.com/embed/C6I4dsl3UGZ8cHj&quot; frameborder=&quot;0&quot; width=&quot;700&quot; height=&quot;400&quot; allowfullscreen></iframe>" autoComplete="off" />
-                                            &nbsp;&nbsp;&nbsp;
-                                            {/* <!--<div className="colorpickerf input-group colorpicker-component">-->
+                            <div className="modal fade matdialog" id="embed_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div className="modal-dialog modal-md" role="document">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h4 className="modal-title" id="myModalLabel">Embed</h4>
+                                        </div>
+                                        <div className="modal-body">
+                                            <div className="embed-placement">
+                                                <input type="text" name="embed" id="embed" className="form-control" onclick="this.select()" value="<iframe src=&quot;https://clikview.com/embed/C6I4dsl3UGZ8cHj&quot; frameborder=&quot;0&quot; width=&quot;700&quot; height=&quot;400&quot; allowfullscreen></iframe>" autoComplete="off" />
+                                                &nbsp;&nbsp;&nbsp;
+                                                {/* <!--<div className="colorpickerf input-group colorpicker-component">-->
                                                             <!--   <input id="demo" type="text" className="form-control" value="#04abf2" onchange="ChangeIframeColor(this)" />-->
                                                             <!--   <span className="input-group-addon"><i></i></span>-->
                                                             <!--</div>--> */}
+                                            </div>
+                                            <div className="pt_embed_playr">
+                                                <iframe title='pt_embed_playr' src="https://clikview.com/embed/C6I4dsl3UGZ8cHj" frameborder="0" width="542" height="400" allowfullscreen="" Style="width: 100%; height: 100%;"></iframe>
+                                            </div>
                                         </div>
-                                        <div className="pt_embed_playr">
-                                            <iframe title='pt_embed_playr' src="https://clikview.com/embed/C6I4dsl3UGZ8cHj" frameborder="0" width="542" height="400" allowfullscreen="" Style="width: 100%; height: 100%;"></iframe>
+                                        <div className="modal-footer">
+                                            <button type="button" className="matbtn btn btn-default" data-dismiss="modal">Close</button>
                                         </div>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" className="matbtn btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
-
-
-
+                    <input type="hidden" id="main-url" value="https://clikview.com%2F" />
+                    <div className="ads-placment" id="footer_ad_"></div>
                 </div>
-                <input type="hidden" id="main-url" value="https://clikview.com%2F" />
-                <div className="ads-placment" id="footer_ad_"></div>
-            </div>
-        </div>
-        //     </div>
+          </div>
+        //   </div>
         // </div>
     )
 };
